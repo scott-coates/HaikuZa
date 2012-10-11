@@ -4,8 +4,44 @@
   %span.icon-bar
   %span.icon-bar
 
-= link_to "Bootstrap Demo", root_path, :class => 'brand'
+= link_to "+Jag", root_path, :class => 'brand'
 
 / Everything you want hidden at 940px or less, place within here
 .nav-collapse
+  %ul.nav
+    %li.active
+      %a{:href => "#"} Home
+    %li
+      %a{:href => "#about"} About
+    %li
+      %a{:href => "#contact"} Contact
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        Dropdown
+        %b.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => "#"} Action
+        %li
+          %a{:href => "#"} Another action
+        %li
+          %a{:href => "#"} Something else here
+        %li.divider
+        %li.nav-header Nav header
+        %li
+          %a{:href => "#"} Separated link
+        %li
+          %a{:href => "#"} One more separated link
+    - if user_signed_in?
+      %li
+        Logged in as #{current_user.name}
+      %li
+        = link_to 'Logout', signout_path
+    - else
+      %li
+        = link_to 'Login', signin_path
+    %form.navbar-form.pull-right
+      %input.span2{:placeholder => "Email", :type => "text"}
+        %input.span2{:placeholder => "Password", :type => "password"}
+          %button.btn{:type => "submit"} Sign in
   / .nav, .navbar-search, .navbar-form, etc

@@ -1,1 +1,11 @@
+/ .btn-navbar is used as the toggle for collapsed navbar content
+%a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+  %span.icon-bar
+  %span.icon-bar
+  %span.icon-bar
+
 = link_to "Bootstrap Demo", root_path, :class => 'brand'
+
+/ Everything you want hidden at 940px or less, place within here
+.nav-collapse
+  / .nav, .navbar-search, .navbar-form, etc

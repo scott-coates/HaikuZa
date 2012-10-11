@@ -1,3 +1,18 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap_and_overrides";
+
+.navbar-fixed-top,
+.navbar-static-top {
+  .navbar-inner {
+    @include box-shadow(3px 3px 6px rgba(0,0,0,0.45));
+  }
+}
+
+
+///* safari v4.0+ and by Chrome v3.0+ */
+//background-image:-webkit-gradient(linear,38% 190%,38% 40%,color-stop(0, rgb(206,192,157)),color-stop(1, rgb(148,168,167)));
+///* Chrome v10.0+ and by safari nightly build*/
+//background-image:-webkit-linear-gradient(90deg,rgb(206,192,157) 0%,rgb(148,168,167) 100%);
+//background-image:linear-gradient(90deg,rgb(206,192,157) 0%,rgb(148,168,167) 100%);

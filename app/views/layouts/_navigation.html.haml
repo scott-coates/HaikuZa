@@ -4,11 +4,14 @@
   %span.icon-bar
   %span.icon-bar
 
-= link_to "+Jag", root_path, :class => 'brand'
+= link_to root_path, :class => "brand" do
+  %strong>+
+  %span.quiet-logo>JustAdd
+  %strong>Girls
 
 / Everything you want hidden at 940px or less, place within here
 .nav-collapse
-  %ul.nav
+  %ul.nav.nav-pills
     %li.active
       %a{:href => "#"} Home
     %li
@@ -40,8 +43,11 @@
     - else
       %li
         = link_to 'Login', signin_path
-    %form.navbar-form.pull-right
-      %input.span2{:placeholder => "Email", :type => "text"}
-        %input.span2{:placeholder => "Password", :type => "password"}
-          %button.btn{:type => "submit"} Sign in
+  %form.navbar-search.pull-right
+    %input.search-query{:placeholder => "Search", :type => "text"}
+  %ul.nav.nav-pills.pull-right
+    %li
+      %a{:href => "#"} Login
+    %li.loud
+      %a{:href => "#about"} Join
   / .nav, .navbar-search, .navbar-form, etc

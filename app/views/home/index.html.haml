@@ -1,4 +1,12 @@
-%h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+.welcome
+  .container
+    .row-fluid
+      .span5.blurb
+        .row-fluid
+          .span12
+            %h2 An army of women <br/> who can accelerate <br/> any cause
+        .row-fluid.join
+          .span12
+            %a{:href => "#about", :class => "loud"} Join
+      .span5.offset1
+        = image_tag("http://i.istockimg.com/file_thumbview_approve/20630702/2/stock-photo-20630702-warming-up-for-winter.jpg")

@@ -1,0 +1,81 @@
+@import "compass";
+@import "mixins";
+
+/*TYPOGRAPHY*/
+
+body {
+  font-family: 'Molengo', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: $loud;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Ubuntu', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: normal;
+}
+
+
+/*NAVIGATION*/
+.navbar {
+  .navbar-inner {
+  	@include background(linear-gradient(-90deg,rgb(148,168,167) 0%,rgb(148,168,167) 27%,rgb(164,174,164) 77%,rgb(164,174,164) 100%));
+
+    @include box-shadow(3px 3px 6px rgba(0,0,0,0.45));
+
+    .brand{
+      color: $loud;
+      font-size:34px;
+      text-shadow:none;
+      .quiet-logo {
+        color: $quiet;
+      }
+    }
+
+    .nav > li{
+      & > a {
+        padding: 10px 6px 6px;
+        margin-top:20px;
+        color: $quiet;
+        font-size:16px;
+        text-shadow:none;
+        
+        &:hover{
+          color:$loud;
+        }
+      }
+
+      &.active a{
+        background-color:$quiet;
+        @include box-shadow(inset 2px 2px 4px rgba(0,0,0,0.65));
+        color: $pleasant;
+        &:hover{
+          color:$loud;
+        }
+      }
+
+      &.loud a{
+        font-weight:bold;
+        padding:8px 12px;
+        background-color:$vibrant;
+        @include box-shadow(inset 0px -2px 4px rgba(0,0,0,0.65));
+        &:hover{
+          color:$loud;
+        }
+      }
+    }
+  }
+}
+
+/*FLASH*/
+#flash_notice, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+#flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}

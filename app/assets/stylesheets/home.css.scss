@@ -1,3 +1,36 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "mixins";
+@import "compass";
+
+.welcome{
+	background-color:$background-smooth;
+	padding:45px initial;
+	.blurb{
+	  font-weight: bold;
+	  color:$pleasant;
+	  padding-top:20px;
+	  padding-left:15px;
+	  h2{
+	    font-size:35px;
+	  }
+	  .join{
+	  	margin-top:62px;
+	  	.loud{
+	  		@include border-radius(5px);
+	  		width:97px;
+	  		font-size: 28px;
+	  		color: $quiet;
+	  		font-weight:bold;
+	  		padding:3px 21px 7px;
+	  		background-color:$vibrant;
+	  		@include box-shadow(inset 0px -2px 4px rgba(0,0,0,0.65));
+	  		&:hover{
+	  		  color:$loud;
+	  		}
+	  	}
+	  }
+	}
+}

@@ -55,7 +55,7 @@
 
 .showcase{
 	background-color:$background-smooth;
-	padding:10px initial;
+	padding:10px 0 120px;;
 	h3{
 		font-size:30px;
 		margin-bottom:25px;
@@ -104,7 +104,7 @@
 	}
 
 	.current-cause-container{
-		min-height:362px;
+		min-height:372px;
 		padding: 0 10px 10px;
 	 	border-width:3px;
 		@include border-radius(18px);	 	

@@ -66,6 +66,15 @@ h1,h2,h3,h4,h5,h6{
   }
 }
 
+footer.container{
+  padding:25px;
+  font-size:12px;
+  li{
+    float:left;
+    margin-right:15px;
+  }
+}
+
 /*FLASH*/
 #flash_notice, #flash_alert {
   padding: 5px 8px;

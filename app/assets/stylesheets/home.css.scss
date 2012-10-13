@@ -7,12 +7,11 @@
 
 .welcome{
 	background-color:$background-smooth;
-	padding:45px initial;
+	padding:45px 0;
 	.blurb{
+	  padding-left:20px;
 	  font-weight: bold;
 	  color:$pleasant;
-	  padding-top:20px;
-	  padding-left:15px;
 	  h2{
 	    font-size:35px;
 	  }
@@ -32,5 +31,24 @@
 	  		}
 	  	}
 	  }
+	}
+ }
+
+.explain{
+	background-color: white;
+	padding-top:25px;
+
+	img{
+		padding-left:18px;
+	}
+
+	.feature-highlight{
+		margin-top:16px;
+		h4{
+			font-size: 25px;
+		}
+		p{
+			font-size:18px;
+		}
 	}
 }

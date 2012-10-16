@@ -36,19 +36,21 @@
             %a{:href => "#"} Separated link
           %li
             %a{:href => "#"} One more separated link
-      - if user_signed_in?
-        %li
-          Logged in as #{current_user.name}
-        %li
-          = link_to 'Logout', signout_path
-      - else
-        %li
-          = link_to 'Login', signin_path
     %form.navbar-search.pull-right
       %input.search-query{:placeholder => "Search", :type => "text"}
     %ul.nav.nav-pills.pull-right
-      %li
-        = link_to 'Login', signin_path
-      %li.loud
-        = link_to 'Join', "/join"
+      - if user_signed_in?
+        %li.dropdown
+          %a.dropdown-toggle.nav-profile{"data-toggle" => "dropdown", :href => "#"}
+            = image_tag(current_user.profile_image_url,{:class=>"profile-image-nav"})
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              = link_to 'Logout', signout_path
+      - else
+        %li
+          = link_to 'Login', signin_path
+        %li.loud
+          = link_to 'Join', "/join"
+      
     / .nav, .navbar-search, .navbar-form, etc

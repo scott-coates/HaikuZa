@@ -42,6 +42,10 @@ h1,h2,h3,h4,h5,h6{
         &:hover{
           color:$loud;
         }
+
+        &.nav-profile {
+          padding-top:5px;
+        }
       }
 
       &.active a{
@@ -73,6 +77,12 @@ footer.container{
     float:left;
     margin-right:15px;
   }
+}
+
+.profile-image-nav{
+  max-width:28px;
+  max-height:28px;
+  @include border-radius(3px);
 }
 
 /*FLASH*/

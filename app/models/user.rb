@@ -4,7 +4,8 @@ class User
   field :uid, type: String
   field :name, type: String
   field :email, type: String
-  attr_accessible :provider, :uid, :name, :email
+  field :profile_image_url, type: String
+  attr_accessible :provider, :uid, :name, :email, :profile_image_url
   # run 'rake db:mongoid:create_indexes' to create indexes
   index({ email: 1 }, { unique: true, background: true })
 
@@ -15,6 +16,7 @@ class User
       if auth['info']
          user.name = auth['info']['name'] || ""
          user.email = auth['info']['email'] || ""
+         user.profile_image_url = auth['info']['image'] || ""
       end
     end
   end

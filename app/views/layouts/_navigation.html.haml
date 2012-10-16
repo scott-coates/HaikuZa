@@ -48,7 +48,7 @@
       %input.search-query{:placeholder => "Search", :type => "text"}
     %ul.nav.nav-pills.pull-right
       %li
-        %a{:href => "#"} Login
+        = link_to 'Login', signin_path
       %li.loud
-        %a{:href => "#about"} Join
+        = link_to 'Join', "/join"
     / .nav, .navbar-search, .navbar-form, etc

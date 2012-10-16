@@ -7,9 +7,22 @@
             %h2 An army of women <br/> who can accelerate <br/> any cause
         .row-fluid.join
           .span12
-            %a{:href => "#about", :class => "loud"} Join
+            = link_to "Join", "/join", :class=>"loud" 
       .span5.offset1
-        = image_tag("http://i.istockimg.com/file_thumbview_approve/20630702/2/stock-photo-20630702-warming-up-for-winter.jpg")
+        #home-slider.carousel.slide
+          .carousel-inner
+            .active.item
+              = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/beautiful_student.jpg")
+              .carousel-caption
+                %h4 #girl_power
+                %p It's not just a slogan. Although we are often told girls don't matter, Girls are a powerful force multiplier on global solutions for poverty, hunger, and economic growth. 
+            .item
+              = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/key_facts.png")
+              .carousel-caption
+                %h4 +Just Add Girls Effect
+                %p Girls represent the <strong>fourth largest emerging global economy</strong>, can feed an additional <strong>100-150 million people</strong> in the world, have lead more successful wall street economic funds for <strong>10 years running</strong>, run more than <strong>10 million businesses</strong>, with <strong>36% better stock price growth</strong> and <strong>46% better return on equity</strong>.
+          %a.carousel-control.left{"data-slide" => "prev", :href => "#home-slider"} ‹
+          %a.carousel-control.right{"data-slide" => "next", :href => "#home-slider"} ›
 .explain
   .container
     .row-fluid

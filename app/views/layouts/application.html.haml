@@ -6,7 +6,6 @@
       %meta{:content => content_for?(:description) ? yield(:description) : "Just Add Girls", :name => "description"}
         %link{:href => "http://fonts.googleapis.com/css?family=Ubuntu|Molengo", :rel => "stylesheet", :type => "text/css"}
         = stylesheet_link_tag "application", :media => "all"
-        = javascript_include_tag "application"
         = csrf_meta_tags
         = yield(:head)
   %body
@@ -29,3 +28,4 @@
           %a{:href => "#"} Link
         %li
           %a{:href => "#"} Link
+    = javascript_include_tag "application"

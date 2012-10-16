@@ -10,7 +10,6 @@
 	padding:45px initial;
 	.blurb{
 	  padding-left:20px;
-	  font-weight: bold;
 	  color:$pleasant;
 	  h2{
 	    font-size:35px;
@@ -23,7 +22,9 @@
 	  		font-size: 28px;
 	  		color: $quiet;
 	  		font-weight:bold;
-	  		padding:3px 21px 7px;
+	  		display:block;
+	  		text-align:center;
+	  		padding:6px 5px 13px;
 	  		background-color:$vibrant;
 	  		@include box-shadow(inset 0px -2px 4px rgba(0,0,0,0.65));
 	  		&:hover{

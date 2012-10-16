@@ -9,33 +9,38 @@
   %span.quiet-logo>JustAdd
   %strong>Girls
 
--# Default
 - unless current_page?(:action=>"join", :controller=>"users")
-  .nav-collapse
-    %ul.nav.nav-pills
-      %li.active
-        %a{:href => "#"} Home
-      %li
-        %a{:href => "#about"} Causes
-      %li
-        %a{:href => "#contact"} People
-      %li
-        %a{:href => "#contact"} Meetups
-    %form.navbar-search.pull-right
-      %input.search-query{:placeholder => "Search", :type => "text"}
-    %ul.nav.nav-pills.pull-right
-      - if user_signed_in?
-        %li.dropdown
-          %a.dropdown-toggle.nav-profile{"data-toggle" => "dropdown", :href => "#"}
-            = image_tag(current_user.profile_image_url,{:class=>"profile-image-nav"})
-            %b.caret
-          %ul.dropdown-menu
-            %li
-              = link_to 'Logout', signout_path
-      - else
+  - if current_page?(:action=>"index", :controller=>"home")
+    .nav-collapse
+      %ul.nav.nav-pills
+        %li.active
+          %a{:href => "#"} Home
         %li
-          = link_to 'Login', signin_path
-        %li.loud
-          = link_to 'Join', "/join"
-      
-    / .nav, .navbar-search, .navbar-form, etc
+          %a{:href => "#about"} Causes
+        %li
+          %a{:href => "#contact"} People
+        %li
+          %a{:href => "#contact"} Meetups
+      %form.navbar-search.pull-right
+        %input.search-query{:placeholder => "Search", :type => "text"}
+      %ul.nav.nav-pills.pull-right
+        - if user_signed_in?
+          = render 'layouts/login'
+        - else
+          %li
+            = link_to 'Login', signin_path
+          %li.loud
+            = link_to 'Join', "/join"
+  - else
+    .nav-collapse
+      %form.navbar-search.pull-right
+        %input.search-query{:placeholder => "Search", :type => "text"}
+      %ul.nav.nav-pills.pull-right
+        - if user_signed_in?
+          = render 'layouts/login'
+        - else
+          %li
+            = link_to 'Login', signin_path
+          %li
+            %strong
+              = link_to 'Join', "/join"

@@ -20,12 +20,4 @@
             .span12
               = render 'layouts/messages'
       = yield
-    %footer.container
-      %ul.nav
-        %li.active
-          %a{:href => "#"} Home
-        %li
-          %a{:href => "#"} Link
-        %li
-          %a{:href => "#"} Link
-    = javascript_include_tag "application"
+    = render 'layouts/footer'

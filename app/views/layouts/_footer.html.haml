@@ -1,0 +1,10 @@
+- unless current_page?(:action=>"join", :controller=>"users")
+  %footer.container
+    %ul.nav
+      %li.active
+        %a{:href => "#"} Home
+      %li
+        %a{:href => "#"} Link
+      %li
+        %a{:href => "#"} Link
+= javascript_include_tag "application"

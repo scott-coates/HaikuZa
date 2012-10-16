@@ -4,50 +4,51 @@
   %span.icon-bar
   %span.icon-bar
 
-= link_to root_path, :class => "brand" do #/TODO: use image because anti-aliasing sucks
+= link_to root_path, :class => "brand" do #/TODO: find out why font sucks in windows
   %strong>+
   %span.quiet-logo>JustAdd
   %strong>Girls
 
-/ Everything you want hidden at 940px or less, place within here
-.nav-collapse
-  %ul.nav.nav-pills
-    %li.active
-      %a{:href => "#"} Home
-    %li
-      %a{:href => "#about"} About
-    %li
-      %a{:href => "#contact"} Contact
-    %li.dropdown
-      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-        Dropdown
-        %b.caret
-      %ul.dropdown-menu
-        %li
-          %a{:href => "#"} Action
-        %li
-          %a{:href => "#"} Another action
-        %li
-          %a{:href => "#"} Something else here
-        %li.divider
-        %li.nav-header Nav header
-        %li
-          %a{:href => "#"} Separated link
-        %li
-          %a{:href => "#"} One more separated link
-    - if user_signed_in?
+-# Default
+- unless current_page?(:action=>"join", :controller=>"users")
+  .nav-collapse
+    %ul.nav.nav-pills
+      %li.active
+        %a{:href => "#"} Home
       %li
-        Logged in as #{current_user.name}
+        %a{:href => "#about"} About
       %li
-        = link_to 'Logout', signout_path
-    - else
+        %a{:href => "#contact"} Contact
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          Dropdown
+          %b.caret
+        %ul.dropdown-menu
+          %li
+            %a{:href => "#"} Action
+          %li
+            %a{:href => "#"} Another action
+          %li
+            %a{:href => "#"} Something else here
+          %li.divider
+          %li.nav-header Nav header
+          %li
+            %a{:href => "#"} Separated link
+          %li
+            %a{:href => "#"} One more separated link
+      - if user_signed_in?
+        %li
+          Logged in as #{current_user.name}
+        %li
+          = link_to 'Logout', signout_path
+      - else
+        %li
+          = link_to 'Login', signin_path
+    %form.navbar-search.pull-right
+      %input.search-query{:placeholder => "Search", :type => "text"}
+    %ul.nav.nav-pills.pull-right
       %li
-        = link_to 'Login', signin_path
-  %form.navbar-search.pull-right
-    %input.search-query{:placeholder => "Search", :type => "text"}
-  %ul.nav.nav-pills.pull-right
-    %li
-      %a{:href => "#"} Login
-    %li.loud
-      %a{:href => "#about"} Join
-  / .nav, .navbar-search, .navbar-form, etc
+        %a{:href => "#"} Login
+      %li.loud
+        %a{:href => "#about"} Join
+    / .nav, .navbar-search, .navbar-form, etc

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     user = User.where(:provider => auth['provider'], 
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
     session[:user_id] = user.id
-      redirect_to root_url
+    redirect_to request.referer
   end
 
   def destroy

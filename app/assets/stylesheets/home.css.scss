@@ -113,7 +113,7 @@
 	}
 
 	.current-cause-container{
-		min-height:372px;
+		min-height:372px; /*TODO: make this be equal height somehow*/
 		padding: 0 10px 10px;
 	 	border-width:3px;
 		@include border-radius(18px);	 	

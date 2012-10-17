@@ -43,7 +43,6 @@
 
 	 .cause-action{
 	 	@include border-radius(5px);
-	 	margin: 0 auto 25px;
  		display:block;
 	 	text-align: center;
 	 	font-size: 16px;
@@ -60,5 +59,39 @@
 	 	&:hover{
 	 	  color:$loud;
 	 	}
+	 }
+
+	 .causes-info-container{
+	 	margin-top:10px;
+
+	 	.cause-image{
+			@include box-shadow(5px 5px 4px rgba(0,0,0,0.65));
+	 	}
+	 }
+
+	 .top-container{
+	 	background-color:rgba(255,255,255,0.9);
+	 	border-color:rgba(182,179,176,0.9);
+		border-width:3px;
+		border-style:solid;
+		margin-bottom:15px;
+		@include border-radius(6px);
+		h4{
+			margin-top:0;
+			padding: 5px 0 5px 10px;
+			background-color:rgba(188,185,183,0.9);
+			border-color:rgba(182,179,176,0.9);
+		}
+
+		.entries-container{
+			padding:0 5px;
+
+			p.info{
+				margin-left:4px;
+				margin-top:8px;
+				color:#999;
+				font-size:18px;
+			}
+		}
 	 }
  }

@@ -1,124 +1,24 @@
-.welcome
+.cause-info
   .container
-    .row-fluid.blurb
+    .row-fluid.cause-progress
       .span5
+        = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg'), main_cause_path, :class => "cause-user-image"
+        .cause-intro
+          %h2.cause-name 17 Syllables
+          %p How would you change the world in 17 syllables?
+      .span4.offset1
         .row-fluid
-          .span12
-            %h2 An army of women <br/> who can accelerate <br/> any cause
-        .row-fluid.join
-          .span12
-            = link_to "Join", "/join", :class=>"loud" #TODO: Use button for this
-      .span5.offset1
-        #home-slider.carousel.slide
-          .carousel-inner
-            .active.item
-              = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/beautiful_student.jpg")
-              .carousel-caption
-                %h4 #girl_power
-                %p It's not just a slogan. Although we're often told girls don't matter, Girls are a powerful force multiplier on global solutions for poverty, hunger, and economic growth. 
-            .item
-              #campaign-17s
-              .carousel-caption
-                %h4 +Just Add Girls Effect
-                %p It's not just a slogan. Although we're often told girls don't matter, Girls are a powerful force multiplier on global solutions for poverty, hunger, and economic growth. 
-            .item
-              = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/key_facts.png")
-              .carousel-caption
-                %h4 +Just Add Girls Effect
-                %p Girls represent the <strong>fourth largest emerging global economy</strong>, can feed an additional <strong>100-150 million people</strong> in the world, have lead more successful wall street economic funds for <strong>10 years running</strong>, run more than <strong>10 million businesses</strong>, with <strong>36% better stock price growth</strong> and <strong>46% better return on equity</strong>.
-          %a.carousel-control.left{"data-slide" => "prev", :href => "#home-slider"} ‹
-          %a.carousel-control.right{"data-slide" => "next", :href => "#home-slider"} ›
-.explain
-  .container
-    .row-fluid
-      .span4
-        .row-fluid
-          .span12
-            = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/jag_causes.jpg")
-        .row-fluid.feature-highlight
-          .span12
-            %h4 Causes
-            %p olore magnam aliquam quaerat volupt corporis
-      .span4
-        .row-fluid
-          .span12
-            = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/jag_girl.png")
-        .row-fluid.feature-highlight
-          .span12
-            %h4 Create
-            %p olore magnam aliquam quaerat volupt corporis
-      .span4
-        .row-fluid
-          .span12
-            = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/jag_create.jpg")
-        .row-fluid.feature-highlight
-          .span12
-            %h4 Accelerate
-            %p olore magnam aliquam quaerat volupt corporis
-.showcase
-  .container
-    %h3 Featured Cause
-    .featured-container
-      %h2.featured-cause-name 17 Syllables
-      .row-fluid.featured-content
-        .span5
-          .row-fluid
-            .span12
-              %p olore magnam aliquam quaerat volupt corporis olore gna aliquam quaerat volupt corporis 
-          .row-fluid
-            .span12
-              %p olore magnam aliquam quaerat volupt corporis olore gna aliquam qua...
-          .featured-user
-            = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg'), '/', :class => "feature-user-image"
-            = link_to "ME", "/"
-          .featured-statistics
-            %p Influencers: 25
-            %p Designers: 231
-            %p Organizers: 68
-        .span5.offset1
-          = link_to image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/17s.jpg", :class=>"featured-image") , '/'
+          .span12.causes-status-container
+            %h4
+              12,000
+              %small syallables written
+            .row-fluid
+              .span8
+                .progress.progress-danger
+                  .bar{:style => "width: 60%;"}
+              .span3.offset1
+                17,000
+            .cause-result
+              +JAG will hold a contest to give away 5 free campaigns
     .seperator
-    %h4 Current Causes
-    .row-fluid
-      .span2.current-cause-container
-        %h5 Full Circle
-        .img-circle
-          = link_to image_tag("http://livedemo00.template-help.com/wt_41056/img/page1-img2.jpg", :class=>"current-image") , '/'
-        %p olore magnam aliquam quaerat volupt cor... 
-        = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg',:class => "current-user-image"), '/'
-        = link_to "ME", "/"
-        .current-statistics
-          %p Influencers: 25
-          %p Designers: 231
-          %p Organizers: 68
-      .span2.offset1.current-cause-container
-        %h5 Full Circle
-        .img-circle
-          = link_to image_tag("http://livedemo00.template-help.com/wt_41056/img/page1-img2.jpg", :class=>"current-image") , '/'
-        %p olore magnam aliquam quaerat volupt cor... 
-        = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg',:class => "current-user-image"), '/'
-        = link_to "ME", "/"
-        .current-statistics
-          %p Influencers: 25
-          %p Designers: 231
-          %p Organizers: 68
-      .span2.offset1.current-cause-container
-        %h5 Full Circle
-        .img-circle
-          = link_to image_tag("http://livedemo00.template-help.com/wt_41056/img/page1-img2.jpg", :class=>"current-image") , '/'
-        %p olore magnam aliquam quaerat volupt cor... 
-        = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg',:class => "current-user-image"), '/'
-        = link_to "ME", "/"
-        .current-statistics
-          %p Influencers: 25
-          %p Designers: 231
-          %p Organizers: 68
-      .span2.offset1.current-cause-container.outline
-        %h5 Your Cause
-        = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/jag_girl.png")
-        .current-statistics
-          %h6
-            %strong Access to
-          %p 1,000 influencers
-          %p 230 designers
-          %p 2,000 organizers
+    .test

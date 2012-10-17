@@ -33,8 +33,6 @@
             = link_to 'Join', "/join"
   - else
     .nav-collapse
-      %form.navbar-search.pull-right
-        %input.search-query{:placeholder => "Search", :type => "text"}
       %ul.nav.nav-pills.pull-right
         - if user_signed_in?
           = render 'layouts/login'
@@ -42,5 +40,7 @@
           %li
             = link_to 'Login', signin_path
           %li
-            %strong
-              = link_to 'Join', "/join"
+            = link_to "/join" do
+              %strong Join
+      %form.navbar-search.pull-right
+        %input.search-query{:placeholder => "Search", :type => "text"}

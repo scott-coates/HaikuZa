@@ -1,0 +1,42 @@
+@import "mixins";
+@import "compass";
+
+.cause-info{
+	background-color:$background-smooth;
+	padding:45px initial;
+	.cause-intro{
+		width:70%;
+	 	display: inline-block;
+	 	margin-left:10px;
+		.cause-name{
+		  color:$pleasant;
+	 	}
+	}
+
+	.cause-user-image{
+		vertical-align: top;
+	 	display: inline-block;
+	}
+
+	.causes-status-container{
+	 	background-color:rgba(255,255,255,0.9);
+	 	border-style:solid;
+	 	border-width:2px;
+	 	border-color:rgba(182,179,176,0.9);
+	 	@include border-radius(3px);
+	 	padding:5px 10px;
+
+	 	h4{margin:0 0 15px;}
+	 	small{
+	  		text-transform: uppercase;
+	 	}
+
+	 	.cause-result{
+	 		color:#92A6A5;
+	 	}
+	 }
+
+	 .cause-progress{
+	 	margin-bottom:25px;
+	 }
+ }

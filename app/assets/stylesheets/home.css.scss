@@ -81,7 +81,7 @@
 		border-style:dashed;
 		padding: 15px 20px;
 		.featured-cause-name{
-			color: $pleasant;
+			a{color: $pleasant;}
 			font-size:35px;
 			@include background(linear-gradient(-180deg,rgba(143,83,108,0) 0%,rgb(79,68,62) 100%));
 			padding: 5px 0 10px 15px;

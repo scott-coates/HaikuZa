@@ -5,7 +5,7 @@
 	background-color:$background-smooth;
 	padding:45px initial;
 	.cause-intro{
-		width:70%;
+		float:none;
 	 	display: inline-block;
 	 	margin-left:10px;
 		.cause-name{
@@ -25,6 +25,7 @@
 	 	border-color:rgba(182,179,176,0.9);
 	 	@include border-radius(3px);
 	 	padding:5px 10px;
+	 	margin-bottom:20px;
 
 	 	h4{margin:0 0 15px;}
 	 	small{
@@ -38,5 +39,26 @@
 
 	 .cause-progress{
 	 	margin-bottom:25px;
+	 }
+
+	 .cause-action{
+	 	@include border-radius(5px);
+	 	margin: 0 auto 25px;
+ 		display:block;
+	 	text-align: center;
+	 	font-size: 16px;
+	 	color: $quiet;
+	 	padding:5px 6px 8px;
+	 	@include box-shadow(inset 0px -2px 4px rgba(0,0,0,0.65));
+	 	&.loud{
+	 		background-color:$vibrant;
+	 	}
+	 	&.quieter{
+	 		background-color:rgb(233,237,238);
+	 		color:$pleasant;
+	 	}
+	 	&:hover{
+	 	  color:$loud;
+	 	}
 	 }
  }

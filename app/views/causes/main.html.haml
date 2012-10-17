@@ -3,7 +3,7 @@
     .row-fluid.cause-progress
       .span5
         = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg'), main_cause_path, :class => "cause-user-image"
-        .cause-intro
+        .cause-intro.span8
           %h2.cause-name 17 Syllables
           %p How would you change the world in 17 syllables?
       .span4.offset1
@@ -20,5 +20,10 @@
                 17,000
             .cause-result
               +JAG will hold a contest to give away 5 free campaigns
+        .row-fluid
+          .span6
+            = link_to "Add your 17 syllables", "/join", :class=>"cause-action loud" #TODO: Use button for this
+          .span6
+            = link_to "Share this cause", "/join", :class=>"cause-action quieter" #TODO: Use button for this
     .seperator
     .test

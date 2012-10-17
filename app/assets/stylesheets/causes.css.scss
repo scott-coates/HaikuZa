@@ -4,13 +4,16 @@
 .cause-info{
 	background-color:$background-smooth;
 	padding:45px initial;
-	.cause-intro{
-		float:none;
-	 	display: inline-block;
-	 	margin-left:10px;
-		.cause-name{
-		  color:$pleasant;
-	 	}
+	.cause-intro-container{
+		margin-top:40px;
+		.cause-intro{
+			float:none;
+		 	display: inline-block;
+		 	margin-left:10px;
+			.cause-name{
+			  color:$pleasant;
+		 	}
+		}
 	}
 
 	.cause-user-image{

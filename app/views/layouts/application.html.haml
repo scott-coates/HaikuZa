@@ -7,7 +7,6 @@
         %link{:href => "http://fonts.googleapis.com/css?family=Ubuntu|Molengo", :rel => "stylesheet", :type => "text/css"}
         = stylesheet_link_tag "application", :media => "all"
         = csrf_meta_tags
-        = yield(:head)
   %body
     %header.navbar.navbar-fixed-top
       %nav.navbar-inner
@@ -21,3 +20,4 @@
               = render 'layouts/messages'
       = yield
     = render 'layouts/footer'
+    = yield(:before_body_close)

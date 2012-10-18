@@ -25,3 +25,4 @@ gem "bootstrap-sass", ">= 2.0.4.0"
 gem "omniauth", ">= 1.1.1"
 gem "omniauth-twitter"
 gem "quiet_assets", ">= 1.0.1", :group => :development
+gem "twitter", "~> 4.1.1"

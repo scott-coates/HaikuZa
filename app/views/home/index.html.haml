@@ -127,7 +127,9 @@
           %p 1,000 influencers
           %p 230 designers
           %p 2,000 organizers
-:javascript
-  $(function(){
-   home_init(); 
-  });
+
+- content_for :before_body_close do
+  :javascript
+    $(function(){
+     home_init(); 
+    });

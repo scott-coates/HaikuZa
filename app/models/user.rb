@@ -7,7 +7,9 @@ class User
   field :profile_image_url, type: String
   field :registered, type: Boolean
   attr_accessible :provider, :uid, :name, :email, :profile_image_url
-  # run 'rake db:mongoid:create_indexes' to create indexes
+  
+  has_many :points
+  
   index({ email: 1 }, { unique: true, background: true })
 
   def self.create_with_omniauth(auth)
@@ -22,4 +24,9 @@ class User
       end
     end
   end
+
+  def add_point(point)
+    point.user=self;
+    points.create!(point)
+   end
 end

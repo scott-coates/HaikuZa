@@ -27,11 +27,14 @@ describe PointService do
     end
 
     it "should assign points for new haiku" do
-        User.should_receive(:create!)do |arg|
-        expect(arg[:registered]).to eq(false)
+      original_method = User.method(:create!)
+
+      User.should_receive(:create!)do |*args|
+        user = original_method.call(*args)
+        user.should_receive(:add_point).with(hash_including(:point_type=>:tweet))
+        user
       end
       PointService.pull_points_from_external_networks
     end
-
   end
 end

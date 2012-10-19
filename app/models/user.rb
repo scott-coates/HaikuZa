@@ -26,7 +26,7 @@ class User
   end
 
   def add_point(point)
-    point.user=self;
+    point[:user=>self];
     points.create!(point)
    end
 end

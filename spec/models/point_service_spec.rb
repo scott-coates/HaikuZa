@@ -16,17 +16,14 @@ describe PointService do
     end
 
     it "should create new tweets" do
-        Haiku.should_receive(:create!)do |arg|
-        expect(arg[:tweet_id]).to eq(1)
-      end
-      PointService.pull_points_from_external_networks
+        Haiku.should_receive(:create!).with(hash_including(:tweet_id=>1))
+        PointService.pull_points_from_external_networks
     end
     
     it "should create new unregistered users" do
-        User.should_receive(:create!)do |arg|
-        expect(arg[:registered]).to eq(false)
-      end
-      PointService.pull_points_from_external_networks
+        original_method = User.method(:create!)
+        User.should_receive(:create!).with(hash_including(:registered=>false)){|*args| original_method.call(*args)}
+        PointService.pull_points_from_external_networks
     end
 
     it "should assign points for new haiku" do

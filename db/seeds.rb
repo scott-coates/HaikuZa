@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# TODO: what is this for? testing? how do i run it?
+# TODO: shouldn't this be in a migration? seems like a lot of issues could come up

@@ -14,6 +14,7 @@ gem "haml-rails", ">= 0.3.5", :group => :development
 gem "hpricot", ">= 0.8.6", :group => :development
 gem "ruby_parser", ">= 2.3.1", :group => :development
 gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
+gem "rspec-mocks", ">= 2.11.0", :group => [:development, :test]
 gem "database_cleaner", ">= 0.8.0", :group => :test
 gem "mongoid-rspec", ">= 1.4.6", :group => :test
 gem "email_spec", ">= 1.2.1", :group => :test

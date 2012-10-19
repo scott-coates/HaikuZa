@@ -236,6 +236,7 @@ DEPENDENCIES
   omniauth-twitter
   quiet_assets (>= 1.0.1)
   rails (= 3.2.8)
+  rspec-mocks (>= 2.11.0)
   rspec-rails (>= 2.11.0)
   ruby_parser (>= 2.3.1)
   sass-rails (~> 3.2.3)

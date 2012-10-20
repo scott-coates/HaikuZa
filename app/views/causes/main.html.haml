@@ -22,13 +22,13 @@
               +JAG will hold a contest to give away 5 free campaigns
         .row-fluid
           .span6
-            = link_to "Add your 17 syllables", "/join", :class=>"cause-action loud" #TODO: Use button for this
+            = link_to "Add your 17 syllables", "#", :class=>"cause-action loud",:id=>"write-haiku" #TODO: Use button for this TODO: how does this parameter list just 'work'?
           .span6
-            = link_to "Share this cause", "/join", :class=>"cause-action quieter" #TODO: Use button for this
+            = link_to "Share this cause", "/join", :class=>"cause-action quieter",:id=>"share-cauase" #TODO: Use button for this
         .row-fluid
           .hide.log-in
             Please
-            = link_to "login", signin_path 
+            = link_to "login", signin_path
             or
             = link_to "sign up", "/join"
             first
@@ -86,5 +86,5 @@
 - content_for :before_body_close do
   :javascript
     $(function(){
-     cause_init({signed_in:#{current_user || false}}); 
+     cause_init({signed_in:#{!current_user.nil?}}); 
     });

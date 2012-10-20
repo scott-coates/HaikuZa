@@ -30,7 +30,7 @@
             Please
             = link_to "login", signin_path
             or
-            = link_to "sign up", "/join"
+            = link_to "sign up", :controller => "users", :action=> "join", :return_url => request.fullpath
             first
     .seperator
     .row-fluid.causes-info-container

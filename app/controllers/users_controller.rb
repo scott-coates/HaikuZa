@@ -25,5 +25,6 @@ def show
   end
 
   def join
+    session[:return_url] = params[:return_url]
   end
 end

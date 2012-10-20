@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :user_signed_in?
   helper_method :correct_user?
+  helper_method :abs_path
 
   private
     def current_user
@@ -28,6 +29,10 @@ class ApplicationController < ActionController::Base
       if !current_user
         redirect_to root_url, :alert => 'You need to sign in for access to this page.'
       end
+    end
+
+    def abs_path
+     "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
     end
 
 end

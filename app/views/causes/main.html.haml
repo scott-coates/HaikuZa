@@ -86,5 +86,5 @@
 - content_for :before_body_close do
   :javascript
     $(function(){
-     cause_init({signed_in:#{!current_user.nil?}}); 
+     cause_init({signed_in: #{!current_user.nil?},user:#{current_user.to_json(:only=>[:screen_name])},share_url:"#{abs_path}"}); 
     });

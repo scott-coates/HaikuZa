@@ -25,6 +25,13 @@
             = link_to "Add your 17 syllables", "/join", :class=>"cause-action loud" #TODO: Use button for this
           .span6
             = link_to "Share this cause", "/join", :class=>"cause-action quieter" #TODO: Use button for this
+        .row-fluid
+          .hide.log-in
+            Please
+            = link_to "login", signin_path 
+            or
+            = link_to "sign up", "/join"
+            first
     .seperator
     .row-fluid.causes-info-container
       .span5
@@ -76,3 +83,8 @@
                 How would you change the world in 17 syllables? How would you change the world in 17 syllables?
               .span2
                 %i.icon-thumbs-up
+- content_for :before_body_close do
+  :javascript
+    $(function(){
+     cause_init({signed_in:#{current_user || false}}); 
+    });

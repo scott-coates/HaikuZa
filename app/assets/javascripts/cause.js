@@ -11,7 +11,7 @@ function cause_init (options) {
 			var h = 350;
 			var left = (screen.width/2)-(w/2);
   			var top = (screen.height/2)-(h/2);
-			var text = "@Just_Add_Girls\r\nline1\r\nline2\r\nline3\r\n";
+			var text = "@Just_Add_Girls\r\n5 syllables\r\n7 syllables\r\n5 syllables\r\n";
 			var hashtags = "17s";
 			window.open('http://twitter.com/share?text=' + encodeURI(text) + '&hashtags=' + encodeURI(hashtags), 'twitterPopup', 'status = 1, width='+w+', height='+h+', top='+top+', left='+left+' resizable = 0');
 			return false;

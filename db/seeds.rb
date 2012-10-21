@@ -1,9 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-# TODO: what is this for? testing? how do i run it?
-# TODO: shouldn't this be in a migration? seems like a lot of issues could come up
+class User
+	after_save do |the_user|
+		the_haiku = Haiku.new(tweet_id: 1, content: "hello world")
+		the_haiku.user = the_user
+		the_haiku.save
+  		the_user.add_point({point_type: :tweet, value:1, haiku: the_haiku})
+	end
+end
+
+1.upto(100) {|i|
+	the_user =  User.create! :name => "user#{'%03d' % i}",:email=> "user#{'%03d' % i}@jag.com",:age => i / 2
+}
+
+# class User
+# 	after_save do |the_user|
+#   		the_user.add_point({point_type: :tweet, value:1, haiku: the_haiku})
+# 	end
+# end
+
+# 1.upto(100) {|i|
+# 	Haiku.create!(tweet_id: 1, content: "hello world") do |haiku|
+# 		haiku.user =  User.create! :name => "user#{'%03d' % i}",:email=> "user#{'%03d' % i}@jag.com",:age => i / 2 do |user|
+# 			user.add_point({point_type: :tweet, value:1, haiku: haiku})
+# 		end
+
+# 	end
+# }

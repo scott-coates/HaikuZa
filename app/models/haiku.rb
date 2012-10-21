@@ -1,5 +1,6 @@
 class Haiku
 	include Mongoid::Document
+	include Mongoid::Timestamps
 	 field :screen_name, type: String
 	 field :tweet_id, type: Integer
 	 field :content, type: String

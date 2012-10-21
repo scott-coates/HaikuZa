@@ -24,7 +24,7 @@
           .span6
             = link_to "Add your 17 syllables", "#", :class=>"cause-action loud",:id=>"write-haiku" #TODO: Use button for this TODO: how does this parameter list just 'work'?
           .span6
-            = link_to "Share this cause", "/join", :class=>"cause-action quieter",:id=>"share-cauase" #TODO: Use button for this
+            = link_to "Share this cause", "#", :class=>"cause-action quieter",:id=>"share-cauase" #TODO: Use button for this
         .row-fluid
           .hide.log-in
             Please
@@ -83,6 +83,19 @@
                 How would you change the world in 17 syllables? How would you change the world in 17 syllables?
               .span2
                 %i.icon-thumbs-up
+.recent-haikus
+  .container
+    %h3 Newest Haikus
+    .row-fluid
+      .span1
+        = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg',:class => "current-user-image"), '/'
+        %p.info 68 tweets
+      .span1
+        = link_to "Mr Dude", '/'
+      .span6
+        How would you change the world in 17 syllables? How would you change the world in 17 syllables?
+      .span2
+        %i.icon-thumbs-up
 - content_for :before_body_close do
   :javascript
     $(function(){

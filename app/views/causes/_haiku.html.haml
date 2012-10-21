@@ -1,1 +1,10 @@
-hi
+.row-fluid
+  .span1
+    = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg',:class => "current-user-image"), '/'
+    %p.info 68 tweets
+  .span1
+    = link_to haiku.user.screen_name, '/'
+  .span7
+    = haiku.content
+  .span1
+    %i.icon-thumbs-up

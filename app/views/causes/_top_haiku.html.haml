@@ -1,7 +1,7 @@
 .row-fluid
   .span2
     = link_to image_tag(top_haiku.user.profile_image_url,:class => "current-user-image"), '/'
-    %p.info 68 tweets
+    %p.info #{pluralize(top_haiku.points,'retweet')}
   .span2
     = link_to top_haiku.user.screen_name, '/'
   .span5

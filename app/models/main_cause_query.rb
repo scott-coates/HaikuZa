@@ -5,6 +5,7 @@ class MainCauseQuery
 		ret_val = MainCauseViewModel.new
 		ret_val.recent_haikus = recent_haikus(page)
 		ret_val.top_referers = top_referers
+		ret_val.top_haikus = top_haikus
 		ret_val
 	end
 
@@ -41,5 +42,9 @@ class MainCauseQuery
 					user.referal_points = user_points["value"].to_i
 					user 
 					end
+		end
+
+		def self.top_haikus
+			Haiku.desc(:points).take(2)
 		end
 end

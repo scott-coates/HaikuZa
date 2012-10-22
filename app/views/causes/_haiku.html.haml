@@ -1,10 +1,10 @@
 .row-fluid
   .span1
     = link_to image_tag(haiku.user.profile_image_url,:class => "current-user-image"), '/'
-    %p.info 68 tweets
-  .span1
+    %p.info #{pluralize(haiku.points,'retweet') if haiku.points}
+  .span2
     = link_to haiku.user.screen_name, '/'
-  .span6
+  .span5
     = haiku.content
   .span2
     %button.button

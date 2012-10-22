@@ -10,7 +10,7 @@ class Point
 	belongs_to :voted_user, class_name:"User"
 
 	after_create do |point|
-		if point.haiku
+		if point.point_type == :retweet && point.haiku
 			point.haiku.points ||= 0
 			point.haiku.points += point.value 
 			point.haiku.save!

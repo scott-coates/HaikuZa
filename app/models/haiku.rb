@@ -8,4 +8,5 @@ class Haiku
 
 	 attr_accessible :screen_name, :tweet_id, :content
 	 index({ tweet_id: -1 })
+	 index({ points: -1 })
 end

@@ -40,26 +40,7 @@
         .top-container
           %h4 Top Haikus
           .entries-container
-            .row-fluid
-              .span3
-                = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg',:class => "current-user-image"), '/'
-                %p.info 68 tweets
-              .span2
-                = link_to "Mr Dude", '/'
-              .span5
-                How would you change the world in 17 syllables? How would you change the world in 17 syllables?
-              .span2
-                %i.icon-thumbs-up
-            .row-fluid
-              .span3
-                = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg',:class => "current-user-image"), '/'
-                %p.info 68 tweets
-              .span2
-                = link_to "Mr Dude", '/'
-              .span5
-                How would you change the world in 17 syllables? How would you change the world in 17 syllables?
-              .span2
-                %i.icon-thumbs-up
+            =render :partial => 'top_haiku', :collection => @view_model.top_haikus
         .top-container
           %h4 Top Influencers
           .entries-container

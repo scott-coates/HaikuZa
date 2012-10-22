@@ -1,0 +1,12 @@
+.row-fluid
+  .span2
+    = link_to image_tag(top_haiku.user.profile_image_url,:class => "current-user-image"), '/'
+    %p.info 68 tweets
+  .span2
+    = link_to top_haiku.user.screen_name, '/'
+  .span5
+    = top_haiku.content
+  .span3
+    %button.button
+      %i.icon-thumbs-up
+      retweet

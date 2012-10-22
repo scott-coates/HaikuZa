@@ -1,0 +1,2 @@
+$('#haiku-list').html('#{escape_javascript render(:partial => 'causes/haiku', :collection => @view_model.recent_haikus)}');
+$('#paginator').html('#{escape_javascript(paginate(@view_model.recent_haikus, :remote => true).to_s)}');

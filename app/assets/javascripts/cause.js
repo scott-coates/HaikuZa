@@ -4,6 +4,13 @@ function cause_init (options) {
 			$(".log-in").fadeIn();
 			return false;
 		});
+		$(".retweet-haiku-button").click(function(){
+			if(!$(this).next('div.log-in').length)
+			{
+				$(this).after($(".log-in:first").clone().removeClass('hide'));
+			}
+			return false;
+		});
 	}
 	else{
 		$("#write-haiku").click(function(){

@@ -1,0 +1,7 @@
+.row-fluid.referer
+  .span2
+    = link_to image_tag(top_referer.profile_image_url,:class => "current-user-image"), '/'
+  .span4
+    = link_to top_referer.screen_name, '/'
+  .span5
+    influenced #{top_referer.referal_points} people

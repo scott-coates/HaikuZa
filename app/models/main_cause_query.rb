@@ -7,6 +7,7 @@ class MainCauseQuery
 		ret_val.top_referers = top_referers
 		ret_val.top_haikus = top_haikus
 		ret_val.progress = progress
+		ret_val.goal_limit = JustAddGirls::Application.config.goal_limit
 		ret_val
 	end
 
@@ -53,7 +54,7 @@ class MainCauseQuery
 			progress = {:points => 0, :percentage_complete => 0}
 			total_points = Point.sum(:value)
 			if(total_points)
-				progress[:percentage_complete] = (total_points / 1700.0) * 100
+				progress[:percentage_complete] = (total_points / JustAddGirls::Application.config.goal_limit) * 100
 				progress[:points] = total_points
 			end
 

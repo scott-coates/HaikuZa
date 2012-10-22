@@ -17,7 +17,7 @@
                 .progress.progress-danger
                   .bar{:style => "width: #{@view_model.progress[:percentage_complete]}%;"}
               .span3.offset1
-                1,700
+                = number_with_delimiter(@view_model.goal_limit, :delimiter => ',')
             .cause-result
               +JAG will hold a contest to give away 5 free campaigns
         .row-fluid

@@ -1,5 +1,5 @@
 case Rails.env
-when "development"
+when "development", "test"
 	image_urls = [
 		'http://a0.twimg.com/profile_images/2670580938/df1de53df54e3daf3835f58a2ecc1f28_normal.jpeg',
 		'http://a0.twimg.com/profile_images/2714947253/85ff1300d70eb3c18c103eaa24fac33e_normal.png',

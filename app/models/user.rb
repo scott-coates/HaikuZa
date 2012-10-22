@@ -29,7 +29,7 @@ class User
   end
 
   def add_point(point)
-    point[:user=>self];
+    point[:notified] = false
     points.create!(point)
    end
 end

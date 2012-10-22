@@ -4,7 +4,8 @@ function cause_init (options) {
 			$(".log-in").fadeIn();
 			return false;
 		});
-		$(".retweet-haiku-button").click(function(){
+
+		$(document).on("click",".retweet-haiku-button",function(){
 			if(!$(this).next('div.log-in').length)
 			{
 				$(this).after($(".log-in:first").clone().removeClass('hide'));

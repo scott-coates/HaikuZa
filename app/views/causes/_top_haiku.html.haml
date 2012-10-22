@@ -5,7 +5,7 @@
   .span2
     = link_to top_haiku.user.screen_name, '/'
   .span5
-    = top_haiku.content
+    %p.haiku-content=top_haiku.content
   .span3
     %button.button.retweet-haiku-button
       %i.icon-thumbs-up

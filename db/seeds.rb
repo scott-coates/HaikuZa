@@ -7,4 +7,6 @@
 	the_haiku.user = the_user 
 	the_haiku.save!
 	the_user.add_point({point_type: :tweet, value:1, haiku: the_haiku})
+	the_user.add_point({point_type: :retweet, value:5, haiku: the_haiku}) if i % 5 == 0
+	the_user.add_point({point_type: :retweet, value:10, haiku: the_haiku}) if i  == 100
 }

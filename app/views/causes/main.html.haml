@@ -86,7 +86,10 @@
 .recent-haikus
   .container
     %h3 Newest Haikus
-    = render :partial => 'causes/haiku', :collection => @view_model.recent_haikus
+    #haiku-list
+      = render :partial => 'causes/haiku', :collection => @view_model.recent_haikus
+    #paginator
+      = paginate @view_model.recent_haikus, :remote => true
 - content_for :before_body_close do
   :javascript
     $(function(){

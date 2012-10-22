@@ -9,8 +9,8 @@ class NotificationService
 			user_with_points.each do |user,point_group|
 				point_total = 0
 				point_group.each{|point| point.notified = true; point_total += point.value; point.save!;}
-				message = "You've earned #{pluralize(point_total,'point')} for influencing and contributing to #17s. We're #{percent_done}% there!"
-				puts message
+				message = "@#{user.screen_name} You've earned #{pluralize(point_total,'point')} for influencing and contributing to #17s. We're #{percent_done}% there!"
+				Twitter.update("I'm tweeting with @gem!")
 			end
 		end
 	end

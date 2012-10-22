@@ -10,14 +10,14 @@
         .row-fluid
           .span12.causes-status-container
             %h4
-              12,000
-              %small syallables written
+              = @view_model.progress[:points].to_i
+              %small credits rewarded
             .row-fluid
               .span8
                 .progress.progress-danger
-                  .bar{:style => "width: 60%;"}
+                  .bar{:style => "width: #{@view_model.progress[:percentage_complete]}%;"}
               .span3.offset1
-                17,000
+                1,700
             .cause-result
               +JAG will hold a contest to give away 5 free campaigns
         .row-fluid

@@ -6,6 +6,7 @@ class MainCauseQuery
 		ret_val.recent_haikus = recent_haikus(page)
 		ret_val.top_referers = top_referers
 		ret_val.top_haikus = top_haikus
+		ret_val.progress = progress
 		ret_val
 	end
 
@@ -46,5 +47,16 @@ class MainCauseQuery
 
 		def self.top_haikus
 			Haiku.desc(:points).take(2)
+		end
+
+		def self.progress
+			progress = {:points => 0, :percentage_complete => 0}
+			total_points = Point.sum(:value)
+			if(total_points)
+				progress[:percentage_complete] = (total_points / 1700.0) * 100
+				progress[:points] = total_points
+			end
+
+			progress
 		end
 end

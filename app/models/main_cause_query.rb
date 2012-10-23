@@ -13,7 +13,7 @@ class MainCauseQuery
 
 	private 
 		def self.recent_haikus(page)
-			Haiku.desc(:tweet_id).page(page).per(5)
+			Haiku.desc(:tweet_id).page(page).per(5) #TODO: why can't i make paging work with embedded?
 		end
 
 		def self.top_referers

@@ -30,7 +30,7 @@ function cause_init (options) {
 			var h = 350;
 			var left = (screen.width/2)-(w/2);
   			var top = (screen.height/2)-(h/2);
-			var text = "help me get some points yo!";
+			var text = "How would you change the world in 17 syllables? @my17syllables";
 			var url = "http://justaddgirls.com/17s?referer=" + options.user.screen_name;
 			window.open('http://twitter.com/share?text=' + encodeURI(text) + '&url=' + encodeURIComponent(url), 'twitterPopup', 'status = 1, width='+w+', height='+h+', top='+top+', left='+left+' resizable = 0');
 			return false;

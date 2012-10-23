@@ -44,7 +44,9 @@ function cause_init (options) {
 			var left = (screen.width/2)-(w/2);
   			var top = (screen.height/2)-(h/2);
 			var text = $(this).parents('.row-fluid:first').find('p.haiku-content').html();
-			window.open('http://twitter.com/intent/tweet?text=' + encodeURI(text), 'twitterPopup', 'status = 1, width='+w+', height='+h+', top='+top+', left='+left+' resizable = 0');
+			var via = "my17syllables";
+			var hashtags = "haiku";
+			window.open('http://twitter.com/intent/tweet?text=' + encodeURI(text) + '&hashtags=' + encodeURI(hashtags) + '&via=' + encodeURI(via), 'twitterPopup', 'status = 1, width='+w+', height='+h+', top='+top+', left='+left+' resizable = 0');
 			return false;
 		});
 	}

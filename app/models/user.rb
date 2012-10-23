@@ -10,10 +10,11 @@ class User
   field :registered, type: Boolean
   attr_accessible :provider, :uid, :name, :screen_name, :email, :profile_image_url
   
-  has_many :points
-  has_many :haikus
+  embeds_many :points
+  embeds_many :haikus
   
   index({ email: 1 }, { unique: true, background: true })
+  index "haikus.tweet_id" => -1
 
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -30,6 +31,7 @@ class User
   end
 
   def add_point(point)
-    points.create!(point)
+    the_point = points.build(point)
+    the_point.haiku.increase_points(the_point) if the_point.haiku
    end
 end

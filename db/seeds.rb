@@ -11,13 +11,14 @@ when "development", "test"
 	]
 
 	1.upto(100) {|i|
-		the_user = User.create! :profile_image_url => image_urls.sample,
+		the_user = User.new :profile_image_url => image_urls.sample,
 			:screen_name => Faker::Name.name,
 			:email=> Faker::Internet.email
 
-		the_haiku = the_user.haikus.create!(tweet_id: i, content: Faker::Lorem.sentence(13))
+		the_haiku = the_user.haikus.build(tweet_id: i, content: Faker::Lorem.sentence(13))
 		the_user.add_point({point_type: :tweet, value:1, haiku: the_haiku})
 		the_user.add_point({point_type: :retweet, value:5, haiku: the_haiku}) if i % 5 == 0
 		the_user.add_point({point_type: :retweet, value:10, haiku: the_haiku}) if i  == 100
+		the_user.save!
 	}
 end

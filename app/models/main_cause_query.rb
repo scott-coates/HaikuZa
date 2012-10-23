@@ -13,7 +13,7 @@ class MainCauseQuery
 
 	private 
 		def self.recent_haikus(page)
-			User.desc("haikus.tweet_id").map { |user| user.haikus.map}}.page(page).per(5)
+			Haiku.desc(:tweet_id).page(page).per(5)
 		end
 
 		def self.top_referers

@@ -4,16 +4,16 @@ class Haiku
 	 field :screen_name, type: String
 	 field :tweet_id, type: Integer
 	 field :content, type: String
-	 field :likes, type: Integer
+	 field :retweet_points, type: Integer
 	 
-	 embedded_in :user
+	 belongs_to :user
 
-	 attr_accessible :screen_name, :tweet_id, :content, :likes
+	 attr_accessible :screen_name, :tweet_id, :content, :retweet_points
 
 	 def increase_points(point)
  		if point.point_type == :retweet
- 			self.likes ||= 0 #TODO: why do I need to call self and not @?
- 			self.likes += point.value 
+ 			self.retweet_points ||= 0 #TODO: why do I need to call self and not @?
+ 			self.retweet_points += point.value 
  		end	
 	 end
 end

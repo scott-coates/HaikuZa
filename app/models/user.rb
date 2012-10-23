@@ -11,7 +11,7 @@ class User
   attr_accessible :provider, :uid, :name, :screen_name, :email, :profile_image_url
   
   embeds_many :points
-  embeds_many :haikus
+  has_many :haikus, autosave: true #TODO: why is this using colon not hash =>
   
   index({ email: 1 }, { unique: true, background: true })
   index "haikus.tweet_id" => -1

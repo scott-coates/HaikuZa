@@ -8,6 +8,7 @@ class Point
 	belongs_to :haiku
 	belongs_to :user
 	belongs_to :voted_user, class_name:"User"
+	index({ no_op_index: 1 })
 
 	after_create do |point|
 		if point.point_type == :retweet && point.haiku

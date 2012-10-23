@@ -36,7 +36,7 @@ class MainCauseQuery
 				.where(:point_type => :retweet)
 				.map_reduce(map,reduce)
 				.out(inline: true)
-				.sort_by {|user_points| user_points["value"]}.reverse!
+				.sort_by {|user_points| user_points["value"]}.reverse! #TODO: why must I access by string not symbol?
 				.take(2)
 				.map do|user_points|
 					user = User.find(user_points["_id"])

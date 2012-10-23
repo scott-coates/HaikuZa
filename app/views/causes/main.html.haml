@@ -4,8 +4,10 @@
       .span5.cause-intro-container
         = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg'), main_cause_path, :class => "cause-user-image"
         .cause-intro.span8
-          %h2.cause-name 17 Syllables
-          %p How would you change the world in 17 syllables?
+          %h2.cause-name 17Syllables
+          %h5
+            %strong The media environment for girls sucks.
+          %h5 How would you change it in 17 syllables?
       .span4.offset1
         .row-fluid
           .span12.causes-status-container
@@ -21,6 +23,18 @@
             .cause-result
               +JAG will hold a contest to give away 5 free campaigns
         .row-fluid
+          .span12
+            %a#haiku-tooltip{"data-placement" => "right", :rel => "tooltip"} What is a Haiku?
+            #haiku-tooltip-content.hide
+              %p A haiku is a poem with 17 syllables.
+              %blockquote
+                %small
+                  How can I be me
+                  %br
+                  when i feel this way inside
+                  %br
+                  who says who i am?
+        .row-fluid
           .span6
             = link_to "Add your 17 syllables", "#", :class=>"cause-action loud",:id=>"write-haiku" #TODO: Use button for this TODO: how does this parameter list just 'work'?
           .span6
@@ -35,7 +49,21 @@
     .seperator
     .row-fluid.causes-info-container
       .span5
-        = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/17s.jpg", :class=>"cause-image")
+        .row-fluid
+          .span12
+            = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/17s.jpg", :class=>"cause-image")
+        .row-fluid
+          .span12.cause-fact
+            %strong Girls receive 250,000 commercial messages by age 17
+            a quarter of a million messages, including half of Saturday morning toy commercials that mention 'physical attractiveness,' are causing depression rates 7 times higher than boys, and twice as many attempts at suicide. The number one cause is believing 'they are too fat.'
+        .row-fluid
+          .span12.cause-fact
+            %strong Did you know
+            girls are on the net and are using social media twice as much as boys. and they dominate in online content creation. that equates to a unique power position in the media.
+        .row-fluid
+          .span12.cause-fact
+            %strong Change the convo
+            haikus - the Japanese 17 syllable poem. They were originally written about nature or the environment. We think the media environment for girls sucks. Write 17Syllables and change the conversation. Use your power on the net and change the conversation.
       .span6.offset1
         .top-container
           %h4 Top Haikus
@@ -45,12 +73,12 @@
           %h4 Top Influencers
           .entries-container
             = render :partial => 'top_referer', :collection => @view_model.top_referers
-  .container
-    %h3 Newest Haikus
-    #haiku-list
-      = render :partial => 'causes/haiku', :collection => @view_model.recent_haikus
-    #paginator
-      = paginate @view_model.recent_haikus, :remote => true
+.container
+  %h3 Newest 17Syllables
+  #haiku-list
+    = render :partial => 'causes/haiku', :collection => @view_model.recent_haikus
+  #paginator
+    = paginate @view_model.recent_haikus, :remote => true
 - content_for :before_body_close do
   :javascript
     $(function(){

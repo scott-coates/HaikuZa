@@ -7,11 +7,16 @@
 	.cause-intro-container{
 		margin-top:40px;
 		.cause-intro{
+			h2,h4,h5,h6 {margin:2px 0;}
 			float:none;
 		 	display: inline-block;
 		 	margin-left:10px;
 			.cause-name{
 			  color:$pleasant;
+		 	}
+
+		 	.sub-intro{
+		 		margin-top:25px;
 		 	}
 		}
 	}
@@ -71,6 +76,14 @@
 
 	 	.cause-image{
 			@include box-shadow(5px 5px 4px rgba(0,0,0,0.65));
+	 	}
+
+	 	.cause-fact
+	 	{
+	 		margin-top:25px;
+	 		font-size:18px;
+	 		line-height: 30px;
+	 		strong{font-size:32px;}
 	 	}
 	 }
 

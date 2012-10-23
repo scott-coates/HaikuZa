@@ -1,4 +1,5 @@
 function cause_init (options) {
+	$("#haiku-tooltip").popover({content:$("#haiku-tooltip-content").html(),trigger:"hover"});
 	if(!options.signed_in){
 		$(".cause-action").click(function(){
 			$(".log-in").fadeIn();

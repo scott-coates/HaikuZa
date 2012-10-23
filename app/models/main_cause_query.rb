@@ -33,7 +33,6 @@ class MainCauseQuery
 					var retVal = 0;
 					values.forEach(function(value) {
 						retVal += value;
-						print(value);
 					  });
 					return retVal;
 				}
@@ -58,7 +57,30 @@ class MainCauseQuery
 
 		def self.progress
 			progress = {:points => 0, :percentage_complete => 0}
-			total_points = Point.sum(:value)
+
+			map = %Q{
+			 function(){
+			 	var that = this;
+			 	this.points.forEach(function(point){
+			 		emit(that._id,point.value);
+				});
+			 }
+			}
+
+			reduce = %Q{
+				function(key, values) {
+					var retVal = 0;
+					values.forEach(function(value) {
+						retVal += value;
+					  });
+					return retVal;
+				}
+			}
+			total_points = User #TODO: find an easier way than to use MapReduce
+				.map_reduce(map,reduce)
+				.out(inline: true)
+				.sum {|user| user["value"]}
+
 			if(total_points)
 				progress[:percentage_complete] = (total_points / JustAddGirls::Application.config.goal_limit) * 100
 				progress[:points] = total_points

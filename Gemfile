@@ -2,10 +2,11 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem "bootstrap-sass", ">= 2.0.4.0"
+  gem 'compass-rails'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
-gem 'compass-rails'
 gem 'jquery-rails'
 gem "thin", ">= 1.5.0"
 gem "mongoid", "= 3.0.6"
@@ -24,7 +25,6 @@ gem "cucumber-rails", ">= 1.3.0", :group => :test, :require => false
 gem "launchy", ">= 2.1.2", :group => :test
 gem "capybara", ">= 1.1.2", :group => :test
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.0.4.0"
 gem "omniauth", ">= 1.1.1"
 gem "omniauth-twitter"
 gem "quiet_assets", ">= 1.0.1", :group => :development

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "1.9.3"
 gem 'rails', '3.2.8'
 #group :assets do #TODO: what is the point of this? i see no diff. why does removing it fix the File to import not found or unreadable error
   gem 'sass-rails',   '~> 3.2.3'

@@ -11,6 +11,7 @@ class User
   attr_accessible :provider, :uid, :name, :screen_name, :email, :profile_image_url
   
   has_many :points
+  has_many :haikus
   
   index({ email: 1 }, { unique: true, background: true })
 

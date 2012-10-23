@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.8'
-group :assets do
+group :assets do #TODO: what is the point of this? i see no diff
   gem 'sass-rails',   '~> 3.2.3'
   gem "bootstrap-sass", ">= 2.0.4.0"
   gem 'compass-rails'

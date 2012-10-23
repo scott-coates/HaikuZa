@@ -14,7 +14,6 @@ class User
   has_many :haikus, autosave: true #TODO: why is this using colon not hash =>
   
   index({ email: 1 }, { unique: true, background: true })
-  index "haikus.tweet_id" => -1
 
   def self.create_with_omniauth(auth)
     create! do |user|

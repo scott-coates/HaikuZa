@@ -10,6 +10,8 @@ class Haiku
 
 	 attr_accessible :screen_name, :tweet_id, :content, :retweet_points
 
+	 index({ tweet_id: -1 }, { background: true })
+
 	 def increase_points(point)
  		if point.point_type == :retweet
  			self.retweet_points ||= 0 #TODO: why do I need to call self and not @?

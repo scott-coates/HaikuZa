@@ -5,7 +5,7 @@ class CausesController < ApplicationController
 		if(referer)
 			the_user = User.where(:screen_name => referer).first
 			if the_user
-				the_user.add_point({point_type: :referal, value:10}) 
+				the_user.add_point({point_type: :referal, value:15}) 
 				the_user.save!
 			end
 			params.delete :referer

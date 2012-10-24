@@ -1,6 +1,16 @@
 @import "mixins";
 @import "compass";
 
+@mixin info-box{
+	background-color:rgba(255,255,255,0.9);
+	border-style:solid;
+	border-width:2px;
+	border-color:rgba(182,179,176,0.9);
+	@include border-radius(3px);
+	padding:5px 10px;
+	margin-bottom:20px;
+}
+
 .cause-info{
 	#tweet-success{opacity:0;}
 	background-color:$background-smooth;
@@ -27,13 +37,7 @@
 	}
 
 	.causes-status-container{
-	 	background-color:rgba(255,255,255,0.9);
-	 	border-style:solid;
-	 	border-width:2px;
-	 	border-color:rgba(182,179,176,0.9);
-	 	@include border-radius(3px);
-	 	padding:5px 10px;
-	 	margin-bottom:20px;
+	  	@include info-box;
 
 	 	h4{margin:0 0 15px;}
 	 	small{
@@ -48,6 +52,12 @@
 	 .cause-progress{
 	 	margin-bottom:25px;
 	 }
+
+	 .legend-container{
+	  	@include info-box;
+
+	  	h5{margin:0 0 15px;}
+	  }
 
 	 .cause-action{
 	 	@include border-radius(5px);

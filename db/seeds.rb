@@ -12,8 +12,7 @@ when "development", "test"
 
 	1.upto(100) {|i|
 		the_user = User.new :profile_image_url => image_urls.sample,
-			:screen_name => Faker::Name.name,
-			:email=> Faker::Internet.email
+			:screen_name => Faker::Name.name
 
 		the_haiku = the_user.haikus.build(tweet_id: i, content: Faker::Lorem.sentence(13))
 		the_user.add_point({point_type: :tweet, value:1, haiku: the_haiku})

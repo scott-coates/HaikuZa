@@ -10,9 +10,8 @@ class PointService
 	 													profile_image_url: tweet.user.profile_image_url
 													)	
 	 		if tweet.retweet?
-	 			the_haiku = Haiku.where(tweet_id:tweet.id).first #TODO:make sure original tweet exists
-	 			the_haiku.increase_points
-	 			the_haiku.user.add_point({point_type: :retweet, value:5,haiku: the_haiku, voted_up_user:user, notified: false})
+	 			the_haiku = Haiku.where(tweet_id:tweet.retweeted_status.id).first #TODO:make sure original tweet exists
+	 			the_point = the_haiku.user.add_point({point_type: :retweet, value:5,haiku: the_haiku, voted_up_user:user, notified: false})
 		 	else
 		 		unless Haiku.where(tweet_id:tweet.id).exists?
 		 			the_haiku = user.haikus.build(

@@ -11,7 +11,6 @@ class User
   
   embeds_many :points
   has_many :haikus, autosave: true #TODO: why is this using colon not hash =>
-  has_many :reweet_points, class_name: "Point", inverse_of: :voted_user
   
   index({ screen_name: 1 }, { unique: true, background: true })
 

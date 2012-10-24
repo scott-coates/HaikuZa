@@ -7,5 +7,5 @@ class Point
 	field :notified, type: Boolean
 	belongs_to :haiku
 	embedded_in :user
-	belongs_to :voted_user, class_name: "User", inverse_of: :retweet_points
+	belongs_to :voted_user, class_name: "User"
 end

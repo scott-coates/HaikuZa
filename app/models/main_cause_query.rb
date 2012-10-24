@@ -21,7 +21,7 @@ class MainCauseQuery
 			 function(){
 			 	var that = this;
 			 	this.points.forEach(function(point){
-			 		if(point.point_type === "retweet"){
+			 		if(point.point_type === "referal"){
 			 			emit(that._id,point.value);
 			 		}
 				});
@@ -38,7 +38,7 @@ class MainCauseQuery
 				}
 			}
 			top_referers = User
-				.where("points.point_type" => :retweet) #TODO: wyh do examples online show hash : separator?
+				.where("points.point_type" => :referal) #TODO: wyh do examples online show hash : separator?
 				.map_reduce(map,reduce)
 				.out(inline: true)
 				.sort_by {|user|user["value"]}.reverse! #TODO: why must I access by string not symbol?

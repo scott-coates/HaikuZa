@@ -13,6 +13,7 @@ describe PointService do
       tweet = double("tweet", {retweet?: false, id:1, user:stub({name:"HI",screen_name:"user1",id:1, profile_image_url:"mypic.jpg"}),text:"somestuff"})
       results.stub(:statuses){[tweet]}
       Twitter.stub(:search){results}
+      Twitter.stub(:retweet)
     end
 
     it "should create new tweets" do

@@ -8,6 +8,7 @@ gem 'rails', '3.2.8'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 #end
+gem 'google-analytics-rails'
 gem 'jquery-rails'
 gem "thin", ">= 1.5.0"
 gem "mongoid", "= 3.0.6"

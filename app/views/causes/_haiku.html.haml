@@ -7,6 +7,6 @@
   .span5
     %p.haiku-content=haiku.content
   .span2
-    %button.button.retweet-haiku-button
+    %button.button.retweet-haiku-button{"data-tweet-id" => haiku.tweet_id}
       %i.icon-thumbs-up
       retweet

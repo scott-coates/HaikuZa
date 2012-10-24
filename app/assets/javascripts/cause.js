@@ -44,8 +44,8 @@ function cause_init (options) {
 			var h = 350;
 			var left = (screen.width/2)-(w/2);
   			var top = (screen.height/2)-(h/2);
-			var text = $(this).parents('.row-fluid:first').find('p.haiku-content').html();
-			window.open('http://twitter.com/intent/tweet?text=' + encodeURIComponent(text), 'twitterPopup', 'status = 1, width='+w+', height='+h+', top='+top+', left='+left+' resizable = 0');
+			var tweet_id = $(this).data('tweet-id');
+			window.open('http://twitter.com/intent/retweet?tweet_id=' + tweet_id, 'twitterPopup', 'status = 1, width='+w+', height='+h+', top='+top+', left='+left+' resizable = 0');
 			return false;
 		});
 	}

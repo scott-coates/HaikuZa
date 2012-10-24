@@ -28,7 +28,7 @@ class PointService
 	end
 
 	def self.find_or_create_user(tweet)
-		User.where(:name=>tweet.user.screen_name).first || User.new(
+		User.where(:screen_name=>tweet.user.screen_name).first || User.new(
 		uid: tweet.user.id,
 		screen_name: tweet.user.screen_name,
 		name: tweet.user.name,

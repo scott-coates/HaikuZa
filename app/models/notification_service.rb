@@ -1,6 +1,6 @@
 class NotificationService
 	extend ActionView::Helpers::TextHelper
-	def self.notify_user_of_points
+	def self.notify_users_of_points
 			map = %Q{
 			 function(){
 			 	var that = this;

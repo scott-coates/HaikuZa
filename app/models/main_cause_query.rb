@@ -1,5 +1,4 @@
 require 'kaminari'
-
 class MainCauseQuery
 	def self.get_main_cause(page)
 		ret_val = MainCauseViewModel.new

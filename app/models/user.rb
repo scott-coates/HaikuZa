@@ -13,7 +13,7 @@ class User
   embeds_many :points
   has_many :haikus, autosave: true #TODO: why is this using colon not hash =>
   
-  index({ email: 1 }, { unique: true, background: true })
+  index({ screen_name: 1 }, { unique: true, background: true })
 
   def self.create_with_omniauth(auth)
     create! do |user|

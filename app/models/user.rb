@@ -5,7 +5,6 @@ class User
   field :uid, type: String
   field :name, type: String
   field :screen_name, type: String
-  field :email, type: String
   field :profile_image_url, type: String
   field :registered, type: Boolean
   attr_accessible :provider, :uid, :name, :screen_name, :email, :profile_image_url
@@ -22,7 +21,6 @@ class User
       if auth['info']
          user.name = auth['info']['name'] || ""
          user.screen_name = auth['info']['nickname'] || ""
-         user.email = auth['info']['email'] || ""
          user.profile_image_url = auth['info']['image'] || ""
          user.registered = true
       end

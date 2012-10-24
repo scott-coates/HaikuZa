@@ -16,7 +16,7 @@ function cause_init (options) {
 	}
 	else{
 		twttr.events.bind('tweet', function(event) {
-		   console.log('event')
+		   $("#tweet-success").css('opacity',1);
 		});
 
 		(function(){

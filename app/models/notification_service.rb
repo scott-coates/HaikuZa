@@ -26,12 +26,15 @@ class NotificationService
 				.out(inline: true)
 				.sum {|user| user["value"]}
 		percent_done = ((total_points / JustAddGirls::Application.config.goal_limit) * 100).to_i
-		points = Point.where(:notified => false).in(point_type:[:retweet,:referal])
-		if points
-			user_with_points = points.group_by{|point| point.user}
-			user_with_points.each do |user,point_group|
+		users_to_notify = User.where("points.notified" => false)
+		users_to_notify.each do |user|
+			points = user.points.where(:notified => false).in(point_type:[:retweet,:referal])
+			if points
 				point_total = 0
-				point_group.each{|point| point.notified = true; point_total += point.value;}
+				points.each do |point|
+					point.notified = true
+					point_total += point.value
+				end
 				message = "@#{user.screen_name} You've earned #{pluralize(point_total,'point')} for influencing and contributing to #17s. We're #{percent_done}% there!"
 				user.save!
 				Twitter.update("I'm tweeting with @gem!")

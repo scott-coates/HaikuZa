@@ -7,6 +7,6 @@
   .span5
     %p.haiku-content=top_haiku.content
   .span3
-    %button.button.retweet-haiku-button{"data-tweet-id" => top_haiku.tweet_id}
+    = link_to "http://twitter.com/intent/retweet?tweet_id=" + top_haiku.tweet_id.to_s, {:class => "btn"} do
       %i.icon-thumbs-up
       retweet

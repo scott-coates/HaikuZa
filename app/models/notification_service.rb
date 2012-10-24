@@ -37,7 +37,10 @@ class NotificationService
 				end
 				message = "@#{user.screen_name} You've earned #{pluralize(point_total,'point')} for influencing and contributing to #17s. We're #{percent_done}% there!"
 				user.save!
-				Twitter.update("I'm tweeting with @gem!")
+				begin
+					Twitter.update(message)
+				rescue Twitter::Error::Forbidden #occurs if a duplicate retweet - that's okay
+				end
 			end
 		end
 	end

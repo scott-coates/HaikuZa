@@ -6,6 +6,7 @@ class PointService
 	 													screen_name: tweet.user.screen_name,
 	 													name: tweet.user.name,
 	 													registered: false,
+	 													provider: "twitter",
 	 													profile_image_url: tweet.user.profile_image_url
 													)	
 	 		if tweet.retweet?

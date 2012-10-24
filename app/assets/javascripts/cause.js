@@ -6,11 +6,13 @@ function cause_init (options) {
 			return false;
 		});
 
-		$(document).on("click",".retweet-haiku-button",function(){
+		$(document).on("click",".retweet-haiku-button",function(event){
 			if(!$(this).next('div.log-in').length)
 			{
 				$(this).after($(".log-in:first").clone().removeClass('hide'));
 			}
+			event.preventDefault();
+			event.stopPropagation();
 			return false;
 		});
 	}

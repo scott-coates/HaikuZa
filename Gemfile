@@ -13,8 +13,9 @@ gem "thin", ">= 1.5.0"
 gem "mongoid", "= 3.0.6"
 gem "kaminari"
 gem "faker"
+gem "debugger"
 gem "haml", ">= 3.1.7"
-gem "haml-rails", ">= 0.3.5", :group => :development
+gem "haml-rails", ">= 0.3.5", :group => :development #TODO: why isn't this required in proudction?
 gem "hpricot", ">= 0.8.6", :group => :development
 gem "ruby_parser", ">= 2.3.1", :group => :development
 gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]

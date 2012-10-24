@@ -3,15 +3,16 @@ class PointService
 		Twitter.search("@just_add_girls #17s", since_id:Haiku.max(:tweet_id)).statuses.each do |tweet|
 			user = find_or_create_user tweet
 			if tweet.retweet?
+				user.save!
 				the_haiku = Haiku.where(tweet_id:tweet.retweeted_status.id).first || self.create_haiku(tweet.retweeted_status, self.find_or_create_user(tweet.retweeted_status))
-				the_point = the_haiku.user.add_point({point_type: :retweet, value:5,haiku: the_haiku, voted_up_user:user, notified: false})
+				the_point = the_haiku.user.add_point({point_type: :retweet, value:5,haiku: the_haiku, voted_user:user, notified: false})
+				the_haiku.user.save!
 			else
 				unless Haiku.where(tweet_id:tweet.id).exists?
 					self.create_haiku tweet,user
+					user.save!
 				end
 			end
-
-			user.save!
 		end
 	end
 
@@ -20,8 +21,7 @@ class PointService
 	def self.create_haiku(tweet,user)
 		the_haiku = user.haikus.build(
 		tweet_id: tweet.id,
-		content: tweet.text,
-		user:user
+		content: tweet.text
 		)
 		user.add_point({point_type: :tweet, value:1,haiku: the_haiku})
 		the_haiku

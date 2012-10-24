@@ -52,7 +52,7 @@ class MainCauseQuery
 		end
 
 		def self.top_haikus
-			Haiku.desc(:points).take(2)
+			Haiku.desc(:retweet_points).take(2)
 		end
 
 		def self.progress

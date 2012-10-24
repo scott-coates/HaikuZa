@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-    session[:return_url] = request.referer
+    session[:return_url] ||= request.referer
     redirect_to '/auth/twitter'
   end
 

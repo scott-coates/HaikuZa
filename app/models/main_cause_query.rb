@@ -61,9 +61,11 @@ class MainCauseQuery
 			map = %Q{
 			 function(){
 			 	var that = this;
-			 	this.points.forEach(function(point){
-			 		emit(that._id,point.value);
-				});
+			 	if(this.points){
+				 	this.points.forEach(function(point){
+				 		emit(that._id,point.value);
+					});
+				}
 			 }
 			}
 

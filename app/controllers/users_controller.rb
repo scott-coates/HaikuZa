@@ -25,6 +25,6 @@ def show
   end
 
   def join
-    session[:return_url] = params[:return_url]
+    session[:return_url] = (params[:return_url] || main_cause_path)
   end
 end

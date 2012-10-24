@@ -1,6 +1,6 @@
 class PointService
 	def self.pull_points_from_external_networks
-	 	Twitter.search("@my17syllables #haiku", since_id:Haiku.max(:tweet_id)).statuses.each do |tweet|
+	 	Twitter.search("@just_add_girls #17s", since_id:Haiku.max(:tweet_id)).statuses.each do |tweet|
 	 		user = User.where(:name=>tweet.user.screen_name).first || User.new(
 	 													uid: tweet.user.id,
 	 													screen_name: tweet.user.screen_name,

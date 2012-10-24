@@ -21,8 +21,8 @@ function cause_init (options) {
 			var left = (screen.width/2)-(w/2);
   			var top = (screen.height/2)-(h/2);
 			var text = "5 syllables\n7 syllables\n5 syllables";
-			var via = "my17syllables";
-			var hashtags = "haiku";
+			var via = "just_add_girls";
+			var hashtags = "17s";
 			window.open('http://twitter.com/intent/tweet?text=' + encodeURI(text) + '&hashtags=' + encodeURI(hashtags) + '&via=' + encodeURI(via), 'twitterPopup', 'status = 1, width='+w+', height='+h+', top='+top+', left='+left+' resizable = 0');
 			return false;
 		});
@@ -33,7 +33,7 @@ function cause_init (options) {
 			var left = (screen.width/2)-(w/2);
   			var top = (screen.height/2)-(h/2);
 			var text = "How would you change the world in 17 syllables?";
-			var via = "my17syllables";
+			var via = "just_add_girls";
 			var url = "http://justaddgirls.com/17s?referer=" + options.user.screen_name;
 			window.open('http://twitter.com/share?text=' + encodeURI(text) + '&url=' + encodeURIComponent(url)  + '&via=' + encodeURI(via), 'twitterPopup', 'status = 1, width='+w+', height='+h+', top='+top+', left='+left+' resizable = 0');
 			return false;

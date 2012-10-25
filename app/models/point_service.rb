@@ -25,7 +25,7 @@ class PointService
 		tweet_id: tweet.id,
 		content: tweet.text
 		)
-		user.add_point({point_type: :tweet, value:5,haiku: the_haiku})
+		user.add_point({point_type: :tweet, value:5,haiku: the_haiku, notified: false})
 
 		begin
 			Twitter.retweet(tweet.id)

@@ -6,8 +6,12 @@ class PointService
 				if tweet.retweet?
 					user.save!
 					the_haiku = Haiku.where(tweet_id:tweet.retweeted_status.id).first || self.create_haiku(tweet.retweeted_status, self.find_or_create_user(tweet.retweeted_status))
-					the_point = the_haiku.user.add_point({point_type: :retweet, value:10,haiku: the_haiku, voted_user:user, notified: false})
-					the_haiku.user.save!
+					the_haiku.retweet_ids ||= []
+					unless the_haiku.retweet_ids.any{|id| id == tweet.id}
+						the_point = the_haiku.user.add_point({point_type: :retweet, value:10,haiku: the_haiku, voted_user:user, notified: false})
+						the_haiku.retweet_ids.push tweet.id
+						the_haiku.user.save!
+					end
 				else
 					unless Haiku.where(tweet_id:tweet.id).exists?
 						self.create_haiku tweet,user

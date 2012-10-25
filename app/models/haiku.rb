@@ -5,6 +5,7 @@ class Haiku
 	 field :tweet_id, type: Integer
 	 field :content, type: String
 	 field :retweet_points, type: Integer
+	 field :retweet_ids, type: Array
 	 
 	 belongs_to :user
 

@@ -19,6 +19,18 @@ function cause_init (options) {
 	else{
 		twttr.events.bind('tweet', function(event) {
 		   $("#tweet-success").css('opacity',1);
+		   if(_gaq)
+			   {
+			   _gaq.push(['_trackEvent', 'Haikus', 'Tweet', options.user.screen_name]);
+			}
+		});
+
+		twttr.events.bind('retweet', function(event) {
+		   $("#tweet-success").css('opacity',1);
+		   if(_gaq)
+			   {
+			   _gaq.push(['_trackEvent', 'Haikus', 'Retweet', options.user.screen_name]);
+			}
 		});
 
 		(function(){

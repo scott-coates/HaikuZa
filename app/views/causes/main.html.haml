@@ -17,22 +17,19 @@
             %strong For girls, the media environment sucks.
           %h5 Haikus are 17 syllable poems originally written about nature. We think the environment for girls in the media sucks. Write 17 syllables about how we should fix this and lets change the conversation.
           .row-fluid
-            .span12
-              %a#haiku-tooltip{"data-placement" => "right", :rel => "tooltip"} What is a Haiku?
-              #haiku-tooltip-content.hide
-                %p A haiku is a poem with 17 syllables.
-                %blockquote
-                  %small
-                    How can I be me
-                    %br
-                    when i feel this way inside
-                    %br
-                    who says who i am?
-          .row-fluid
             .span6
-              = link_to "Write a haiku", "#", :class=>"cause-action loud", :id=>"write-haiku" #TODO: Use button for this TODO: how does this parameter list just 'work'?
+              = link_to "Write a haiku", "#", :class=>"cause-action loud", :id=>"write-haiku", "data-placement" => "right", :rel => "tooltip" #TODO: Use button for this TODO: how does this parameter list just 'work'?
             .span6
               = link_to "Share this cause", "#", :class=>"cause-action quieter", :id=>"share-cauase" #TODO: Use button for this
+            #haiku-tooltip-content.hide
+              %p A haiku is a poem with 17 syllables.
+              %blockquote
+                %small
+                  How can I be me
+                  %br
+                  when i feel this way inside
+                  %br
+                  who says who i am?
           .row-fluid
             .hide.log-in
               Please

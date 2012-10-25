@@ -20,6 +20,7 @@ function cause_init (options) {
 		twttr.events.bind('tweet', function(event) {
 		   $(window).focus(function() {
 			   	$(this).unbind('focus');
+			   	$('html, body').animate({scrollTop:0}, 'slow');
 				$("#tweet-success").css('opacity',1);
 		   });
 		   if(window._gaq)

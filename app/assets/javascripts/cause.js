@@ -18,7 +18,10 @@ function cause_init (options) {
 	}
 	else{
 		twttr.events.bind('tweet', function(event) {
-		   $("#tweet-success").css('opacity',1);
+		   $(window).focus(function() {
+			   	$(this).unbind('focus');
+				$("#tweet-success").css('opacity',1);
+		   });
 		   if(window._gaq)
 			   {
 			   window._gaq.push(['_trackEvent', 'Haikus', 'Tweet', options.user.screen_name]);

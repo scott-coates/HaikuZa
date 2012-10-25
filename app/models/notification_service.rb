@@ -28,7 +28,7 @@ class NotificationService
 		percent_done = ((total_points / JustAddGirls::Application.config.goal_limit) * 100).to_i
 		users_to_notify = User.where("points.notified" => false)
 		users_to_notify.each do |user|
-			points = user.points.where(:notified => false).in(point_type:[:retweet,:referal])
+			points = user.points.where(:notified => false)
 			if points
 				point_total = 0
 				points.each do |point|

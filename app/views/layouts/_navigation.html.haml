@@ -7,7 +7,7 @@
 = link_to root_path, :class => "brand" do #/TODO: find out why font sucks in windows
   %strong>+
   %span.quiet-logo>JustAdd
-  %strong>Girls
+  %strong>Girls  
 
 - unless current_page?(:action=>"join", :controller=>"users")
   - if current_page?(:action=>"index", :controller=>"home")
@@ -33,6 +33,9 @@
             = link_to 'Join', "/join"
   - else
     .nav-collapse
+      %ul.nav.nav-pills.pull-left
+        %li
+          = mail_to 'jen.justaddgirls@gmail.com', 'Feedback', :class => "btn-inverse"
       %ul.nav.nav-pills.pull-right
         - if user_signed_in?
           = render 'layouts/login'

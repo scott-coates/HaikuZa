@@ -34,7 +34,7 @@ function cause_init (options) {
 		});
 
 		(function(){
-			var text = "5 syllables\n7 syllables\n5 syllables";
+			var text = "5 syllables / 7 syllables / 5 syllables";
 			var via = "just_add_girls";
 			var hashtags = "17s";
 			$("#write-haiku").attr('href','http://twitter.com/intent/tweet?text=' + encodeURI(text) + '&hashtags=' + encodeURI(hashtags) + '&via=' + encodeURI(via));

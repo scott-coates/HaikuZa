@@ -7,6 +7,7 @@ class CausesController < ApplicationController
 			if the_user
 				the_user.add_point({point_type: :referal, value:15}) 
 				the_user.save!
+				flash[:referer] = {:screen_name => the_user.screen_name}
 			end
 			params.delete :referer
 			redirect_to main_cause_path

@@ -19,17 +19,17 @@ function cause_init (options) {
 	else{
 		twttr.events.bind('tweet', function(event) {
 		   $("#tweet-success").css('opacity',1);
-		   if(_gaq)
+		   if(window._gaq)
 			   {
-			   _gaq.push(['_trackEvent', 'Haikus', 'Tweet', options.user.screen_name]);
+			   window._gaq.push(['_trackEvent', 'Haikus', 'Tweet', options.user.screen_name]);
 			}
 		});
 
 		twttr.events.bind('retweet', function(event) {
 		   $("#tweet-success").css('opacity',1);
-		   if(_gaq)
+		   if(window._gaq)
 			   {
-			   _gaq.push(['_trackEvent', 'Haikus', 'Retweet', options.user.screen_name]);
+			   window._gaq.push(['_trackEvent', 'Haikus', 'Retweet', options.user.screen_name]);
 			}
 		});
 
@@ -51,5 +51,13 @@ function cause_init (options) {
 			window.open('http://twitter.com/share?text=' + encodeURI(text) + '&url=' + encodeURIComponent(url)  + '&via=' + encodeURI(via), 'twitterPopup', 'status = 1, width='+w+', height='+h+', top='+top+', left='+left+' resizable = 0');
 			return false;
 		});
+	}
+
+	if(options.referer)
+	{
+		if(window._gaq)
+		{
+			window._gaq.push(['_trackEvent', 'Haikus', 'Referal', options.referer.screen_name]);
+		}
 	}
 }

@@ -33,7 +33,15 @@
             = link_to 'Join', "/join"
   - else
     .nav-collapse
-      %ul.nav.nav-pills.pull-left
+      %ul.nav.nav-pills
+        %li
+          %a{:href => "#"} Home
+        %li
+          %a{:href => "#about"} Causes
+        %li
+          %a{:href => "#contact"} People
+        %li
+          %a{:href => "#contact"} Meetups
         %li
           = mail_to 'jen.justaddgirls@gmail.com', 'Feedback', :class => "btn-inverse"
       %ul.nav.nav-pills.pull-right

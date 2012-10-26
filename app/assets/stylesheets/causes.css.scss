@@ -16,8 +16,15 @@
 	background-color:$background-smooth;
 	padding:45px initial;
 	.cause-intro-container{
+		.cause-image{
+			@include box-shadow(5px 5px 4px rgba(0,0,0,0.65));
+			max-height: 250px;
+			display:block;
+			margin:0 auto;
+	 	}
 		.cause-intro{
-			h2,h4,h5,h6 {margin:2px 0;}
+			h2{margin:20px 0;}
+			h4,h5,h6 {margin:10px 0;}
 			float:none;
 		 	display: inline-block;
 		 	margin-left:10px;
@@ -84,16 +91,12 @@
 	 .causes-info-container{
 	 	margin-top:10px;
 
-	 	.cause-image{
-			@include box-shadow(5px 5px 4px rgba(0,0,0,0.65));
-	 	}
-
 	 	.cause-fact
 	 	{
-	 		margin-top:25px;
+	 		margin-bottom:20px;
 	 		font-size:18px;
 	 		line-height: 30px;
-	 		strong{font-size:32px;}
+	 		strong{font-size:32px; color:$vibrant;}
 	 	}
 	 }
 

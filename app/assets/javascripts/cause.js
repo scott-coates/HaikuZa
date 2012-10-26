@@ -17,11 +17,13 @@ function cause_init (options) {
 		});
 	}
 	else{
+		//$(".cause-image").click(function(event) {
 		twttr.events.bind('tweet', function(event) {
 		   $(window).focus(function() {
 			   	$(this).unbind('focus');
 			   	$('html, body').animate({scrollTop:0}, 'slow');
-				$("#tweet-success").css('opacity',1);
+			   	$("#tweet-success").slideDown('slow');
+			   	setTimeout(function(){$("#tweet-success").css('opacity',1);},1000);
 		   });
 		   if(window._gaq)
 			   {

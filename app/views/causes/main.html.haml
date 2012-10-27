@@ -2,6 +2,14 @@
   = javascript_include_tag "//platform.twitter.com/widgets.js"
 .cause-info
   .container
+    %ul.breadcrumb
+      %li
+        %a{:href => "#"} Home
+        %span.divider /
+      %li
+        %a{:href => "#"} Causes
+        %span.divider /
+      %li.active 17Syllables
     #tweet-success.alert.alert-error.fade.in.hide
       %button.close{"data-dismiss" => "alert", :type => "button"} ×
       %strong Thanks!
@@ -15,7 +23,7 @@
             = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/17s.jpg", :class=>"cause-image")
         .row-fluid
           .cause-intro.span12
-            %h2.cause-name 17Syllables: Changing the conversation about womens' portrayal in media
+            %h2.cause-name Using only a Haiku, tell us how we can change the conversation about womens' portrayal in media
             .row-fluid
               .span6
                 = link_to "Write a haiku (5 pts)", "#", :class=>"cause-action loud", :id=>"write-haiku", "data-placement" => "right", :rel => "tooltip" #TODO: Use button for this TODO: how does this parameter list just 'work'?
@@ -101,7 +109,7 @@
           .entries-container
             = render :partial => 'top_referer', :collection => @view_model.top_referers
 .container
-  %h3 Newest 17Syllables
+  %h3 Newest Haikus
   #haiku-list
     = render :partial => 'causes/haiku', :collection => @view_model.recent_haikus
   #paginator

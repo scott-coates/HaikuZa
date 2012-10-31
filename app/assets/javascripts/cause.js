@@ -17,13 +17,15 @@ function cause_init (options) {
 		});
 	}
 	else{
+		var haiku_list = $("#haiku-list");
 		//$(".cause-image").click(function(event) {
 		twttr.events.bind('tweet', function(event) {
-		   $(window).focus(function() {
-			   	$(this).unbind('focus');
-			   	$('html, body').animate({scrollTop:0}, 'slow');
-			   	$("#tweet-success").slideDown('slow');
-			   	setTimeout(function(){$("#tweet-success").css('opacity',1);},1000);
+		   $(window).one('focus', function() {
+			   	$('html, body').animate({scrollTop:haiku_list.offset().top}, 'slow',function (argument) {
+			   		$("#tweet-success").slideDown('slow',function (argument) {
+			   			$("#tweet-success").css('opacity',1);
+			   		});
+			   	});
 		   });
 		   if(window._gaq)
 			   {

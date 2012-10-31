@@ -1,7 +1,7 @@
 class PointService
 	def self.pull_points_from_external_networks
-		Twitter.search("@just_add_girls #17s -from:just_add_girls", since_id:Haiku.max(:tweet_id)).statuses.each do |tweet|
-			unless tweet.user.screen_name.downcase == "just_add_girls" #do not include jag
+		Twitter.search("@haiku_za #geekitude -from:haiku_za", since_id:Haiku.max(:tweet_id)).statuses.each do |tweet|
+			unless tweet.user.screen_name.downcase == "haiku_za" #do not include jag
 				user = find_or_create_user tweet
 				if tweet.retweet?
 					user.save!

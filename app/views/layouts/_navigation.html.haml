@@ -42,7 +42,7 @@
         %li
           %a{:href => main_cause_path} Meetups
         %li
-          = mail_to 'jen.justaddgirls@gmail.com', 'Feedback', :class => "btn-inverse"
+          = link_to 'Feedback', 'http://twitter.com/intent/tweet?hashtags=feedback&via=haiku_za', :class => "btn-inverse", :target => "_blank"
       %ul.nav.nav-pills.pull-right
         - if user_signed_in?
           = render 'layouts/login'

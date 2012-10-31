@@ -10,12 +10,6 @@
         %a{:href => "#"} Topics
         %span.divider /
       %li.active Express your inner geek
-    #tweet-success.alert.alert-error.fade.in.hide
-      %button.close{"data-dismiss" => "alert", :type => "button"} ×
-      %strong Thanks!
-      Your haiku and score will show up soon! 
-      %br
-      Now go get more points by sharing this cause and getting your haiku retweeted. Make sure to check out the newest tweets at the bottom of the page. Retweet the ones you like!
     .row-fluid.cause-progress
       .span5.cause-intro-container
         .row-fluid
@@ -118,6 +112,12 @@
             = render :partial => 'top_referer', :collection => @view_model.top_referers
 .container
   %h3 Newest Haikus
+  #tweet-success.alert.alert-error.fade.in.hide
+    %a.close{"data-dismiss" => "alert", :href => "#"} ×
+    %strong Thanks!
+    Your haiku and score will show up soon! 
+    %br
+    Now go get more points by sharing this cause and getting your haiku retweeted. Make sure to check out the newest tweets at the bottom of the page. Retweet the ones you like!
   #haiku-list
     = render :partial => 'causes/haiku', :collection => @view_model.recent_haikus
   #paginator

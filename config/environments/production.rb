@@ -61,5 +61,5 @@ JustAddGirls::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
-  GA.tracker = "UA-35838718-1"
+  GA.tracker = "UA-35992712-1"
 end

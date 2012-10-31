@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     user = User.where(:provider => auth['provider'], 
                       :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
+    user.registered = true
+    user.save!
     session[:user_id] = user.id
     redirect_to session[:return_url] || root_url
     session.delete(:return_url)

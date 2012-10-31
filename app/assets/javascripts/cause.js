@@ -51,7 +51,7 @@ function cause_init (options) {
 			var h = 350;
 			var left = (screen.width/2)-(w/2);
   			var top = (screen.height/2)-(h/2);
-			var text = "How would you change the world in 17 syllables?";
+			var text = "Express your inner geek";
 			var via = "haiku_za";
 			var url = "http://haikuza.com/express-your-inner-geek?referer=" + options.user.screen_name;
 			window.open('http://twitter.com/share?text=' + encodeURI(text) + '&url=' + encodeURIComponent(url)  + '&via=' + encodeURI(via), 'twitterPopup', 'status = 1, width='+w+', height='+h+', top='+top+', left='+left+' resizable = 0');

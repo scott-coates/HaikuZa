@@ -38,7 +38,7 @@
 #campaign-17s{
    width: 470px;
    height: 270px;
-   background: url('https://s3-us-west-1.amazonaws.com/jag-assets/images/17s.jpg');
+   background: url('https://s3-us-west-1.amazonaws.com/jag-assets/images/geekitude.jpg');
    background-repeat: no-repeat;
    background-size: cover;
  }
@@ -83,7 +83,7 @@
 		.featured-cause-name{
 			a{color: $pleasant;}
 			font-size:35px;
-			@include background(linear-gradient(-180deg,rgba(143,83,108,0) 0%,rgb(79,68,62) 100%));
+			@include background(linear-gradient(-180deg,rgba(217, 231, 143, 0) 0%, #F3ECB6 100%));
 			padding: 5px 0 10px 15px;
 			margin-bottom:25px;
 		}

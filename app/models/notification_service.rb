@@ -35,7 +35,7 @@ class NotificationService
 					point.notified = true
 					point_total += point.value
 				end
-				message = "@#{user.screen_name} You've earned #{pluralize(point_total,'point')} for influencing and contributing to #17s. We're #{percent_done}% there!"
+				message = "@#{user.screen_name} You've earned another #{pluralize(point_total,'point')} for influencing and contributing to #geekitude. We're #{percent_done}% there!"
 				user.save!
 				begin
 					Twitter.update(message)

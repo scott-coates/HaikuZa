@@ -4,7 +4,7 @@
       .span5
         .row-fluid
           .span12
-            %h2 Amassing an army of women to accelerate girl's causes
+            %h2 Changing the conversation 17 syllables at a time
         .row-fluid.join
           .span12
             = link_to "Join", "/join", :class=>"loud" #TODO: Use button for this
@@ -14,23 +14,23 @@
             .active.item
               = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/beautiful_student.jpg")
               .carousel-caption
-                %h4 #girl_power
-                %p It's not just a slogan. Although we're often told girls don't matter, Girls are a powerful force multiplier on global solutions for poverty, hunger, and economic growth. 
+                %h4 Empower your creativity
+                %p This is the place where you can be heard.
             .item
               #campaign-17s
               .carousel-caption
                 %h4
-                  = link_to "17 Syllables",main_cause_path
+                  = link_to "Express your inner geek",main_cause_path
                 %p 
-                  %strong For girls, the media environment sucks.
-                  Haikus are 17 syllable poems originally written about nature. We think the environment for girls in the media sucks. Write 17 syllables about how we should fix this and lets change the conversation.
+                  %strong Look, you're a geek.
+                  We get it. Write a haiku and tell us about it.
                   = link_to "more", main_cause_path 
 
             .item
               = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/key_facts.png")
               .carousel-caption
-                %h4 +Just Add Girls Effect
-                %p Girls represent the <strong>fourth largest emerging global economy</strong>, can feed an additional <strong>100-150 million people</strong> in the world, have lead more successful wall street economic funds for <strong>10 years running</strong>, run more than <strong>10 million businesses</strong>, with <strong>36% better stock price growth</strong> and <strong>46% better return on equity</strong>.
+                %h4 Topics
+                %p Talk about politics, technology, comics, movies, sports, etc.
           %a.carousel-control.left{"data-slide" => "prev", :href => "#home-slider"} ‹
           %a.carousel-control.right{"data-slide" => "next", :href => "#home-slider"} ›
 .explain
@@ -39,11 +39,11 @@
       .span4
         .row-fluid
           .span12
-            = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/jag_causes.jpg")
+            = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/topics_rounded.jpg")
         .row-fluid.feature-highlight
           .span12
-            %h4 Causes
-            %p Join a cause that adds girls to the solution 
+            %h4 Topics
+            %p Find a topic that suits you.
       .span4
         .row-fluid
           .span12
@@ -51,45 +51,45 @@
         .row-fluid.feature-highlight
           .span12
             %h4 Create
-            %p Create a campaign or initiative from your imagination and our DIY tools
+            %p Be creative. Express yourself.
       .span4
         .row-fluid
           .span12
-            = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/jag_create.jpg")
+            = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/haiku_rounded.jpg")
         .row-fluid.feature-highlight
           .span12
-            %h4 Accelerate
-            %p Crowdsource and accelerate your own unique initiative or solution on our Crowd platform
+            %h4 Share
+            %p This is where you can be yourself and get rewarded for doing so.
 .showcase
   .container
-    %h3 Featured Cause
+    %h3 Featured Topic
     .featured-container
       %h2.featured-cause-name
-        = link_to "17 Syllables",main_cause_path
+        = link_to "Express your inner geek",main_cause_path
       .row-fluid.featured-content
         .span5
           .row-fluid
             .span12
               %h5
-                %strong For girls, the media environment sucks.
-                %h5 Haikus are 17 syllable poems originally written about nature. We think the environment for girls in the media sucks. Write 17 syllables about how we should fix this and lets change the conversation.
+                %strong Look, you're a geek.
+                %h5 We get it. Write a haiku and tell us about it.
           .featured-user
             = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg'), main_cause_path, :class => "feature-user-image"
-            = link_to "17Syllables", main_cause_path
+            = link_to "Express your inner geek", main_cause_path
           .featured-statistics
             %p Influencers: 250
             %p Designers: 26
             %p Organizers: 53
         .span5.offset1
-          = link_to image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/17s.jpg", :class=>"featured-image") , main_cause_path
+          = link_to image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/geekitude.jpg", :class=>"featured-image") , main_cause_path
     .seperator
-    %h4 Current Causes
+    %h4 Current Topics
     .row-fluid
       .span2.current-cause-container
-        %h5 Walking for Water
+        %h5 Accessing Water
         .img-circle
           = link_to image_tag("http://aidwatchers.com/wp/wp-content/uploads/2010/08/african-women-carrying-water.jpg", :class=>"current-image") , main_cause_path
-        %p Girls can't go to school when they walk several miles a day for their family's daily water. Support our walk to raise $ for a well in Africa.
+        %p How can we make it easier for African families to obtain clean water? 
         = link_to image_tag('http://i.istockimg.com/file_thumbview_approve/19939420/1/stock-photo-19939420-color-portrait-of-a-charming-and-laughing-girl.jpg',:class => "current-user-image"), main_cause_path
         = link_to "jen_17s", main_cause_path
         .current-statistics
@@ -97,10 +97,10 @@
           %p Designers: 3
           %p Organizers: 68
       .span2.offset1.current-cause-container
-        %h5 Get Girls Into Tech
+        %h5 Girls in Tech
         .img-circle
           = link_to image_tag("http://collegepals.org/wp-content/uploads/2011/12/computerGirl.jpg", :class=>"current-image") , main_cause_path
-        %p Women programmed ENIAC, the US Government’s first computer, yet girls currently receive only 18% of Computer Science degrees. Support our campaign for girl's STEM education in high schools.
+        %p The number of women entering the high tech workforce is on the rise. What can we do to improve...
         = link_to image_tag('https://s3-us-west-1.amazonaws.com/jag-assets/images/beautiful_student.jpg',:class => "current-user-image"), main_cause_path
         = link_to "irelandc90", main_cause_path
         .current-statistics
@@ -108,10 +108,10 @@
           %p Designers: 8
           %p Organizers: 10
       .span2.offset1.current-cause-container
-        %h5 Up the 17%
+        %h5 Womens' Policy
         .img-circle
           = link_to image_tag("http://www.womenspolicy.org/images/content/pagebuilder/10533.jpg", :class=>"current-image") , main_cause_path
-        %p When young girls are socialized to undervalue themselves, we end up with only 17% female representation in Congress. Support our campaign to teach girls about running for local government.
+        %p Teach girls about local government and prepare them for making an impact on even bigger levels
         = link_to image_tag('http://thumb10.shutterstock.com/thumb_small/270058/95732242/stock-photo-closeup-portrait-of-elegant-middle-aged-woman-95732242.jpg',:class => "current-user-image"), main_cause_path
         = link_to "susronib", main_cause_path
         .current-statistics

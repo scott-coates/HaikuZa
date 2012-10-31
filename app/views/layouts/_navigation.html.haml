@@ -5,9 +5,8 @@
   %span.icon-bar
 
 = link_to root_path, :class => "brand" do #/TODO: find out why font sucks in windows
-  %strong>+
-  %span.quiet-logo>JustAdd
-  %strong>Girls  
+  %span.quiet-logo>Haiku
+  %strong>Za
 
 - unless current_page?(:action=>"join", :controller=>"users")
   - if current_page?(:action=>"index", :controller=>"home")
@@ -16,11 +15,11 @@
         %li.active
           %a{:href => "#"} Home
         %li
-          %a{:href => "#about"} Causes
+          %a{:href => main_cause_path} Topics
         %li
-          %a{:href => "#contact"} People
+          %a{:href => main_cause_path} People
         %li
-          %a{:href => "#contact"} Meetups
+          %a{:href => main_cause_path} Meetups
       %form.navbar-search.pull-right
         %input.search-query{:placeholder => "Search", :type => "text"}
       %ul.nav.nav-pills.pull-right
@@ -37,11 +36,11 @@
         %li
           %a{:href => "#"} Home
         %li
-          %a{:href => "#about"} Causes
+          %a{:href => main_cause_path} Topics
         %li
-          %a{:href => "#contact"} People
+          %a{:href => main_cause_path} People
         %li
-          %a{:href => "#contact"} Meetups
+          %a{:href => main_cause_path} Meetups
         %li
           = mail_to 'jen.justaddgirls@gmail.com', 'Feedback', :class => "btn-inverse"
       %ul.nav.nav-pills.pull-right

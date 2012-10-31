@@ -41,8 +41,8 @@ function cause_init (options) {
 
 		(function(){
 			var text = "5 syllables / 7 syllables / 5 syllables";
-			var via = "just_add_girls";
-			var hashtags = "17s";
+			var via = "haiku_za";
+			var hashtags = "geekitude";
 			$("#write-haiku").attr('href','http://twitter.com/intent/tweet?text=' + encodeURI(text) + '&hashtags=' + encodeURI(hashtags) + '&via=' + encodeURI(via));
 		})();
 
@@ -52,8 +52,8 @@ function cause_init (options) {
 			var left = (screen.width/2)-(w/2);
   			var top = (screen.height/2)-(h/2);
 			var text = "How would you change the world in 17 syllables?";
-			var via = "just_add_girls";
-			var url = "http://justaddgirls.com/17s?referer=" + options.user.screen_name;
+			var via = "haiku_za";
+			var url = "http://haikuza.com/express-your-inner-geek?referer=" + options.user.screen_name;
 			window.open('http://twitter.com/share?text=' + encodeURI(text) + '&url=' + encodeURIComponent(url)  + '&via=' + encodeURI(via), 'twitterPopup', 'status = 1, width='+w+', height='+h+', top='+top+', left='+left+' resizable = 0');
 			return false;
 		});

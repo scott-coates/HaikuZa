@@ -7,37 +7,37 @@
         %a{:href => "#"} Home
         %span.divider /
       %li
-        %a{:href => "#"} Causes
+        %a{:href => "#"} Topics
         %span.divider /
-      %li.active 17Syllables
+      %li.active Express your inner geek
     #tweet-success.alert.alert-error.fade.in.hide
       %button.close{"data-dismiss" => "alert", :type => "button"} ×
       %strong Thanks!
-      Your 17syllables and score will show up soon! 
+      Your haiku and score will show up soon! 
       %br
       Now go get more points by sharing this cause and getting your haiku retweeted. Make sure to check out the newest tweets at the bottom of the page. Retweet the ones you like!
     .row-fluid.cause-progress
       .span5.cause-intro-container
         .row-fluid
           .span12
-            = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/17s.jpg", :class=>"cause-image")
+            = image_tag("https://s3-us-west-1.amazonaws.com/jag-assets/images/geekitude.jpg", :class=>"cause-image")
         .row-fluid
           .cause-intro.span12
-            %h2.cause-name Using only a Haiku, tell us how we can change the conversation about womens' portrayal in media
+            %h2.cause-name Look, you're a geek. We get it. Write a haiku and tell us about it.
             .row-fluid
               .span6
                 = link_to "Write a haiku (5 pts)", "#", :class=>"cause-action loud", :id=>"write-haiku", "data-placement" => "right", :rel => "tooltip" #TODO: Use button for this TODO: how does this parameter list just 'work'?
               .span6
-                = link_to "Share this cause (15 pts)", "#", :class=>"cause-action quieter", :id=>"share-cauase" #TODO: Use button for this
+                = link_to "Share this topic (15 pts)", "#", :class=>"cause-action quieter", :id=>"share-cauase" #TODO: Use button for this
               #haiku-tooltip-content.hide
                 %p A haiku is a poem with 17 syllables.
                 %blockquote
                   %small
-                    How can I be me
+                    One show did it right
                     %br
-                    when i feel this way inside
+                    Battlestar Galactica
                     %br
-                    who says who i am?
+                    "Sir" means 'boss' not 'man'
             .row-fluid
               .hide.log-in
                 Please
@@ -58,7 +58,7 @@
               .span3.offset1
                 = number_with_delimiter(@view_model.goal_limit, :delimiter => ',')
             .cause-result
-              Every action earns points. When we reach #{number_with_delimiter(@view_model.goal_limit, :delimiter => ',')} points, the person with the most gets to create a cause of their own on JustAddGirls.com.
+              Whoever earns the most points by the time we reach #{number_with_delimiter(@view_model.goal_limit, :delimiter => ',')} will win free cake! The cake is not a lie.
         .row-fluid
           .span12.legend-container
             .row-fluid
@@ -78,27 +78,35 @@
             .row-fluid
               .span4
                 %h5
-                  Share this cause
+                  Share this topic
               .span1
                 \=
               .span7
                 15 points
-                %small When you click 'share this cause', you'll be provided with a unique link. Every time someone visits your unique link, you'll  earn 'influencer' points.
+                %small - When you click 'share this topic', you'll be provided with a unique link. Every time someone visits your unique link, you'll  earn 'influencer' points.
     .seperator
     .row-fluid.causes-info-container
       .span5
         .row-fluid
           .span12.cause-fact
-            %strong Girls receive 250,000 commercial messages by age 17
-            including half of their Saturday morning toy commercials that mention 'physical attractiveness.'  Girls depression rates are 7 times higher than boys, and they are 2ce as likely to attempt suicide with the #1 reason being 'they think they are fat.' This is not a coincidence.
+            %strong What should I write?
+            A haiku that expresses your inner geek. Talk about Dr. Who, Battlestar Galactica, Zelda, Ruby on Rails, etc. As long as it's in the form of a haiku (a poem with 17 syllables), you should be fine.
         .row-fluid
           .span12.cause-fact
-            %strong But did you know
-            girls are on the net and are using social media twice as much as boys? And they dominate in online content creation. That equates to a unique power position for girls in the media. Knowing that, is there something you want to say about all of this?
+            %strong Haiku? What..
+            You might remember them from elementary school. It's a poem with 17 syllables. They go like this:
+            %blockquote
+              %small
+                One show did it right
+                %br
+                Battlestar Galactica
+                %br
+                "Sir" means 'boss' not 'man'
+            Pro Tip: Having trouble keeping track of syllables? Clap as you talk it out.
         .row-fluid
           .span12.cause-fact
-            %strong Change the convo
-            Haikus - 17 syllable poems, were originally written about nature or the environment. We think the media environment for girls sucks. Write 17Syllables and change the conversation. Use your power on the net and change the conversation.
+            %strong Now what?
+            Once you've participated, check out the other haikus below. Like one? Retweet it and the original author gets points. Hate that idea and think you deserve ALL THE POINTS? Click the 'Share This Topic' button above to generate a uniuqe link in the Twitterverse. When other people click that link, you'll get points. One step closer to cake.
       .span6.offset1
         .top-container
           %h4 Top Haikus

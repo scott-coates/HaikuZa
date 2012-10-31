@@ -4,6 +4,7 @@ class Point
 	field :point_type, type: Symbol
 	field :value, type: Integer
 	field :name, type: String
+	field :ip, type: String
 	field :notified, type: Boolean
 	belongs_to :haiku
 	embedded_in :user

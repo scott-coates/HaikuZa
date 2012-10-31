@@ -5,7 +5,7 @@ class CausesController < ApplicationController
 		if(referer)
 			the_user = User.where(:screen_name => referer).first
 			if the_user
-				the_user.add_point({point_type: :referal, value:15, notified: false}) 
+				the_user.add_point({ip: request.ip, point_type: :referal, value:15, notified: false}) 
 				the_user.save!
 				flash[:referer] = {:screen_name => the_user.screen_name}
 			end
